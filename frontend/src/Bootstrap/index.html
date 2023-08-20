@@ -1,0 +1,3723 @@
+<html lang="en-US" style="--vh: 6.96px">
+  <script
+    type="text/javascript"
+    async=""
+    src="https://www.gstatic.com/recaptcha/releases/x19joXI_IeQnFJ7YnfDapSZq/recaptcha__en.js"
+    crossorigin="anonymous"
+    integrity="sha384-9OTZ8SiMijeWjnYSXo9GM41sIwr+l2FFUhIAcxbPhIFEgn+MDTrEpzq3Alr7uXd2"
+  ></script>
+  <script>
+    (function () {
+      const FLASH_MIMETYPE = "application/x-shockwave-flash";
+      const FUTURESPLASH_MIMETYPE = "application/futuresplash";
+      const FLASH7_AND_8_MIMETYPE = "application/x-shockwave-flash2-preview";
+      const FLASH_MOVIE_MIMETYPE = "application/vnd.adobe.flash.movie";
+      const FLASH_ACTIVEX_CLASSID = "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000";
+
+      class RuffleMimeTypeArray {
+        constructor(mimeTypes) {
+          this.__mimeTypes = [];
+          this.__namedMimeTypes = {};
+          if (mimeTypes) {
+            for (let i = 0; i < mimeTypes.length; i++) {
+              this.install(mimeTypes[i]);
+            }
+          }
+        }
+        install(mimeType) {
+          const index = this.__mimeTypes.length;
+          this.__mimeTypes.push(mimeType);
+          this.__namedMimeTypes[mimeType.type] = mimeType;
+          this[mimeType.type] = mimeType;
+          this[index] = mimeType;
+        }
+        item(index) {
+          // This behavior is done to emulate a 32-bit uint,
+          // which browsers use.
+          return this.__mimeTypes[index >>> 0];
+        }
+        namedItem(name) {
+          return this.__namedMimeTypes[name];
+        }
+        get length() {
+          return this.__mimeTypes.length;
+        }
+        [Symbol.iterator]() {
+          return this.__mimeTypes[Symbol.iterator]();
+        }
+      }
+      class RufflePlugin extends RuffleMimeTypeArray {
+        constructor(name, description, filename) {
+          super();
+          this.name = name;
+          this.description = description;
+          this.filename = filename;
+        }
+      }
+      class RufflePluginArray {
+        constructor(plugins) {
+          this.__plugins = [];
+          this.__namedPlugins = {};
+          for (let i = 0; i < plugins.length; i++) {
+            this.install(plugins[i]);
+          }
+        }
+        install(plugin) {
+          const index = this.__plugins.length;
+          this.__plugins.push(plugin);
+          this.__namedPlugins[plugin.name] = plugin;
+          this[plugin.name] = plugin;
+          this[index] = plugin;
+        }
+        item(index) {
+          // This behavior is done to emulate a 32-bit uint,
+          // which browsers use. Cloudflare's anti-bot
+          // checks rely on this.
+          return this.__plugins[index >>> 0];
+        }
+        namedItem(name) {
+          return this.__namedPlugins[name];
+        }
+        refresh() {
+          // Nothing to do, we just need to define the method.
+        }
+        [Symbol.iterator]() {
+          return this.__plugins[Symbol.iterator]();
+        }
+        get length() {
+          return this.__plugins.length;
+        }
+      }
+      /**
+       * A fake plugin designed to trigger Flash detection scripts.
+       */
+      const FLASH_PLUGIN = new RufflePlugin(
+        "Shockwave Flash",
+        "Shockwave Flash 32.0 r0",
+        "ruffle.js"
+      );
+      /**
+       * A fake plugin designed to allow early detection of if the Ruffle extension is in use.
+       */
+      const RUFFLE_EXTENSION = new RufflePlugin(
+        "Ruffle Extension",
+        "Ruffle Extension",
+        "ruffle.js"
+      );
+      FLASH_PLUGIN.install({
+        type: FUTURESPLASH_MIMETYPE,
+        description: "Shockwave Flash",
+        suffixes: "spl",
+        enabledPlugin: FLASH_PLUGIN,
+      });
+      FLASH_PLUGIN.install({
+        type: FLASH_MIMETYPE,
+        description: "Shockwave Flash",
+        suffixes: "swf",
+        enabledPlugin: FLASH_PLUGIN,
+      });
+      FLASH_PLUGIN.install({
+        type: FLASH7_AND_8_MIMETYPE,
+        description: "Shockwave Flash",
+        suffixes: "swf",
+        enabledPlugin: FLASH_PLUGIN,
+      });
+      FLASH_PLUGIN.install({
+        type: FLASH_MOVIE_MIMETYPE,
+        description: "Shockwave Flash",
+        suffixes: "swf",
+        enabledPlugin: FLASH_PLUGIN,
+      });
+      RUFFLE_EXTENSION.install({
+        type: "",
+        description: "Ruffle Detection",
+        suffixes: "",
+        enabledPlugin: RUFFLE_EXTENSION,
+      });
+      function installPlugin(plugin) {
+        if (!("install" in navigator.plugins) || !navigator.plugins["install"]) {
+          Object.defineProperty(navigator, "plugins", {
+            value: new RufflePluginArray(navigator.plugins),
+            writable: false,
+          });
+        }
+        const plugins = navigator.plugins;
+        plugins.install(plugin);
+        if (
+          plugin.length > 0 &&
+          (!("install" in navigator.mimeTypes) || !navigator.mimeTypes["install"])
+        ) {
+          Object.defineProperty(navigator, "mimeTypes", {
+            value: new RuffleMimeTypeArray(navigator.mimeTypes),
+            writable: false,
+          });
+        }
+        const mimeTypes = navigator.mimeTypes;
+        for (let i = 0; i < plugin.length; i += 1) {
+          mimeTypes.install(plugin[i]);
+        }
+      }
+
+      installPlugin(FLASH_PLUGIN);
+      installPlugin(RUFFLE_EXTENSION);
+    })();
+  </script>
+  <head>
+    <script
+      type="text/javascript"
+      src="chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/content_scripts/webauthn/webauthn.js"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      media="all"
+      href="https://www.winwinit.eu/wp-content/cache/autoptimize/css/autoptimize_09b6cbad5033c6307abfd5e987e5ca49.css"
+      rel="stylesheet"
+    />
+    <title>Software, DevOps, Services &amp; Solutions | WinWinIt</title>
+
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="https://www.winwinit.eu/xmlrpc.php" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      crossorigin="use-credentials"
+      href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/manifest.json"
+    />
+    <link
+      rel="mask-icon"
+      href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/safari-pinned-tab.svg"
+      color="#4a90cb"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/favicon.ico"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-config"
+      content="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/favicon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!--[if IE]> <link rel="shortcut icon" href="/favicon.ico" /> <![endif]-->
+
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <!-- This site is optimized with the Yoast SEO plugin v20.13 - https://yoast.com/wordpress/plugins/seo/ -->
+    <meta
+      name="description"
+      content="Specializzati nel DevOps e nella creazione di soluzioni per accompagnare le aziende nel loro percorso verso la Digital Transformation."
+    />
+    <link rel="canonical" href="https://www.winwinit.eu/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Software, DevOps, Services &amp; Solutions | WinWinIt" />
+    <meta
+      property="og:description"
+      content="Specializzati nel DevOps e nella creazione di soluzioni per accompagnare le aziende nel loro percorso verso la Digital Transformation."
+    />
+    <meta property="og:url" content="https://www.winwinit.eu/" />
+    <meta property="og:site_name" content="WinWinIt" />
+    <meta property="article:modified_time" content="2022-03-09T15:53:43+00:00" />
+    <meta
+      property="og:image"
+      content="https://www.winwinit.eu/wp-content/uploads/2021/04/digital-transformation-min.jpg"
+    />
+    <meta property="og:image:width" content="1777" />
+    <meta property="og:image:height" content="1000" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Software, DevOps, Services &amp; Solutions | WinWinIt" />
+    <meta
+      name="twitter:description"
+      content="Specializzati nel DevOps e nella creazione di soluzioni per accompagnare le aziende nel loro percorso verso la Digital Transformation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.winwinit.eu/wp-content/uploads/2021/04/digital-transformation-min.jpg"
+    />
+    <script type="application/ld+json" class="yoast-schema-graph">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.winwinit.eu/",
+            "url": "https://www.winwinit.eu/",
+            "name": "Software, DevOps, Services & Solutions | WinWinIt",
+            "isPartOf": { "@id": "https://www.winwinit.eu/#website" },
+            "datePublished": "2021-04-22T13:37:05+00:00",
+            "dateModified": "2022-03-09T15:53:43+00:00",
+            "description": "Specializzati nel DevOps e nella creazione di soluzioni per accompagnare le aziende nel loro percorso verso la Digital Transformation.",
+            "breadcrumb": { "@id": "https://www.winwinit.eu/#breadcrumb" },
+            "inLanguage": "en-US",
+            "potentialAction": [{ "@type": "ReadAction", "target": ["https://www.winwinit.eu/"] }]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.winwinit.eu/#breadcrumb",
+            "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home" }]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.winwinit.eu/#website",
+            "url": "https://www.winwinit.eu/",
+            "name": "WinWinIt",
+            "description": "What I Need, When I Need It",
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.winwinit.eu/?s={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            ],
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel="dns-prefetch" href="//www.winwinit.eu" />
+    <link rel="dns-prefetch" href="//static.addtoany.com" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="WinWinIt » Feed"
+      href="https://www.winwinit.eu/feed/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="WinWinIt » Comments Feed"
+      href="https://www.winwinit.eu/comments/feed/"
+    />
+
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="wp-block-library-css"
+        href="https://www.winwinit.eu/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="classic-theme-styles-css"
+        href="https://www.winwinit.eu/wp-includes/css/classic-themes.min.css?ver=6.2.2"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="contact-form-7-css"
+        href="https://www.winwinit.eu/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.8"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="ez-toc-css"
+        href="https://www.winwinit.eu/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.53"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="addtoany-css"
+        href="https://www.winwinit.eu/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="main-css-css"
+        href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/_dist/css/main.css?ver=1.8"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="aos-css-css"
+        href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/aos/aos.css?ver=1.8"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+    <noscript
+      ><link
+        rel="stylesheet"
+        id="swiper-css-css"
+        href="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/swiper/swiper-bundle.min.css?ver=6.2.2"
+        type="text/css"
+        media="all"
+      />
+    </noscript>
+    <script type="text/javascript" id="addtoany-core-js-before">
+      window.a2a_config = window.a2a_config || {};
+      a2a_config.callbacks = [];
+      a2a_config.overlays = [];
+      a2a_config.templates = {};
+    </script>
+    <script
+      type="text/javascript"
+      async=""
+      defer=""
+      src="https://static.addtoany.com/menu/page.js"
+      id="addtoany-core-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/jquery/jquery.min.js?ver=3.6.4"
+      id="jquery-core-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0"
+      id="jquery-migrate-js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      defer=""
+      src="https://www.winwinit.eu/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1"
+      id="addtoany-jquery-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/cssrelpreload.js"
+      id="loadCSS-js"
+    ></script>
+    <link rel="https://api.w.org/" href="https://www.winwinit.eu/wp-json/" />
+    <link
+      rel="alternate"
+      type="application/json"
+      href="https://www.winwinit.eu/wp-json/wp/v2/pages/12"
+    />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://www.winwinit.eu/xmlrpc.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://www.winwinit.eu/wp-includes/wlwmanifest.xml"
+    />
+    <meta name="generator" content="WordPress 6.2.2" />
+    <link rel="shortlink" href="https://www.winwinit.eu/" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://www.winwinit.eu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.winwinit.eu%2F"
+    />
+    <link
+      rel="alternate"
+      type="text/xml+oembed"
+      href="https://www.winwinit.eu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.winwinit.eu%2F&amp;format=xml"
+    />
+    <script src="https://static.addtoany.com/menu/modules/core.c78901bc.js" type="module"></script>
+    <style type="text/css">
+      .a2a_hide {
+        display: none;
+      }
+      .a2a_logo_color {
+        background-color: #0166ff;
+      }
+      .a2a_menu,
+      .a2a_menu * {
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        float: none;
+        margin: 0;
+        padding: 0;
+        position: static;
+        height: auto;
+        width: auto;
+      }
+      .a2a_menu {
+        border-radius: 6px;
+        display: none;
+        direction: ltr;
+        background: #fff;
+        font: 16px sans-serif-light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue",
+          Arial, Helvetica, "Liberation Sans", sans-serif;
+        color: #000;
+        line-height: 12px;
+        border: 1px solid #ccc;
+        vertical-align: baseline;
+        overflow: hidden;
+      }
+      .a2a_mini {
+        min-width: 200px;
+        position: absolute;
+        width: 300px;
+        z-index: 9999997;
+      }
+      .a2a_overlay {
+        display: none;
+        background: #616c7deb;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 9999998;
+        -webkit-tap-highlight-color: transparent;
+        transition: opacity 0.14s, backdrop-filter 0.14s;
+      }
+      .a2a_full {
+        background: #fff;
+        border: 1px solid #fff;
+        box-shadow: #2a2a2a1a 0 0 20px 10px;
+        height: auto;
+        height: calc(320px);
+        top: 15%;
+        left: 50%;
+        margin-left: -320px;
+        position: fixed;
+        text-align: center;
+        width: 640px;
+        z-index: 9999999;
+        transition: transform 0.14s, opacity 0.14s;
+      }
+      .a2a_full_footer,
+      .a2a_full_header,
+      .a2a_full_services {
+        border: 0;
+        margin: 0;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+      .a2a_full_header {
+        padding-bottom: 8px;
+      }
+      .a2a_full_services {
+        height: 280px;
+        overflow-y: scroll;
+        padding: 0 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .a2a_full_services .a2a_i {
+        display: inline-block;
+        float: none;
+        width: 181px;
+        width: calc(33.334% - 18px);
+      }
+      div.a2a_full_footer {
+        font-size: 12px;
+        text-align: center;
+        padding: 8px 14px;
+      }
+      div.a2a_full_footer a,
+      div.a2a_full_footer a:visited {
+        display: inline;
+        font-size: 12px;
+        line-height: 14px;
+        padding: 8px 14px;
+      }
+      div.a2a_full_footer a:focus,
+      div.a2a_full_footer a:hover {
+        background: 0 0;
+        border: 0;
+        color: #0166ff;
+      }
+      div.a2a_full_footer a span.a2a_s_a2a,
+      div.a2a_full_footer a span.a2a_w_a2a {
+        background-size: 14px;
+        border-radius: 3px;
+        display: inline-block;
+        height: 14px;
+        line-height: 14px;
+        margin: 0 3px 0 0;
+        vertical-align: top;
+        width: 14px;
+      }
+      .a2a_modal {
+        height: 0;
+        left: 50%;
+        margin-left: -320px;
+        position: fixed;
+        text-align: center;
+        top: 15%;
+        width: 640px;
+        z-index: 9999999;
+        transition: transform 0.14s, opacity 0.14s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .a2a_modal_body {
+        background: 0 0;
+        border: 0;
+        font: 24px sans-serif-light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue",
+          Arial, Helvetica, "Liberation Sans", sans-serif;
+        position: relative;
+        height: auto;
+        width: auto;
+      }
+      .a2a_thanks {
+        color: #fff;
+        height: auto;
+        margin-top: 20px;
+        width: auto;
+      }
+      .a2a_thanks > div:first-child {
+        margin: 0 0 40px 0;
+      }
+      .a2a_thanks div * {
+        height: inherit;
+      }
+      #a2a_copy_link {
+        background: #fff;
+        border: 1px solid #fff;
+        cursor: pointer;
+        margin-top: 15%;
+      }
+      span.a2a_s_link#a2a_copy_link_icon,
+      span.a2a_w_link#a2a_copy_link_icon {
+        background-size: 48px;
+        border-radius: 0;
+        display: inline-block;
+        height: 48px;
+        left: 0;
+        line-height: 48px;
+        margin: 0 3px 0 0;
+        position: absolute;
+        vertical-align: top;
+        width: 48px;
+      }
+      #a2a_modal input#a2a_copy_link_text {
+        background-color: transparent;
+        border: 0;
+        color: #2a2a2a;
+        cursor: pointer;
+        font: inherit;
+        height: 48px;
+        left: 62px;
+        max-width: initial;
+        min-height: auto;
+        padding: 0;
+        position: relative;
+        width: 564px;
+        width: calc(100% - 76px);
+      }
+      #a2a_copy_link_copied {
+        background-color: #0166ff;
+        color: #fff;
+        display: none;
+        font: inherit;
+        font-size: 16px;
+        margin-top: 1px;
+        padding: 3px 8px;
+      }
+      @media (prefers-color-scheme: dark) {
+        .a2a_menu a,
+        .a2a_menu a.a2a_i,
+        .a2a_menu a.a2a_i:visited,
+        .a2a_menu a.a2a_more,
+        i.a2a_i {
+          border-color: #2a2a2a !important;
+          color: #fff !important;
+        }
+        .a2a_menu a.a2a_i:active,
+        .a2a_menu a.a2a_i:focus,
+        .a2a_menu a.a2a_i:hover,
+        .a2a_menu a.a2a_more:active,
+        .a2a_menu a.a2a_more:focus,
+        .a2a_menu a.a2a_more:hover,
+        .a2a_menu_find_container {
+          border-color: #444 !important;
+          background-color: #444 !important;
+        }
+        .a2a_menu:not(.a2a_thanks) {
+          background-color: #2a2a2a;
+          border-color: #2a2a2a;
+        }
+        .a2a_menu_find {
+          color: #fff !important;
+        }
+        .a2a_menu span.a2a_s_find svg {
+          background-color: transparent !important;
+        }
+        .a2a_menu span.a2a_s_find svg path {
+          fill: #fff !important;
+        }
+        .a2a_full {
+          box-shadow: #00000066 0 0 20px 10px;
+        }
+        .a2a_overlay {
+          background-color: #373737eb;
+        }
+      }
+      @media print {
+        .a2a_floating_style,
+        .a2a_menu,
+        .a2a_overlay {
+          visibility: hidden;
+        }
+      }
+      @keyframes a2aFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .a2a_starting {
+        opacity: 0;
+      }
+      .a2a_starting.a2a_full,
+      .a2a_starting.a2a_modal {
+        transform: scale(0.8);
+      }
+      @media (max-width: 639px) {
+        .a2a_full {
+          border-radius: 0;
+          top: 15%;
+          left: 0;
+          margin-left: auto;
+          width: 100%;
+        }
+        .a2a_modal {
+          left: 0;
+          margin-left: 10px;
+          width: calc(100% - 20px);
+        }
+      }
+      @media (min-width: 318px) and (max-width: 437px) {
+        .a2a_full .a2a_full_services .a2a_i {
+          width: calc(50% - 18px);
+        }
+      }
+      @media (max-width: 317px) {
+        .a2a_full .a2a_full_services .a2a_i {
+          width: calc(100% - 18px);
+        }
+      }
+      @media (max-height: 436px) {
+        .a2a_full {
+          bottom: 40px;
+          height: auto;
+          top: 40px;
+        }
+      }
+      @media (max-height: 550px) {
+        .a2a_modal {
+          top: 30px;
+        }
+      }
+      @media (max-height: 360px) {
+        .a2a_modal {
+          top: 20px;
+        }
+        .a2a_thanks > div:first-child {
+          margin-bottom: 20px;
+        }
+      }
+      .a2a_menu a {
+        color: #0166ff;
+        text-decoration: none;
+        font: 16px sans-serif-light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue",
+          Arial, Helvetica, "Liberation Sans", sans-serif;
+        line-height: 14px;
+        height: auto;
+        width: auto;
+        outline: 0;
+      }
+      .a2a_menu a.a2a_i:visited,
+      .a2a_menu a.a2a_more {
+        color: #0166ff;
+      }
+      .a2a_menu a.a2a_i:active,
+      .a2a_menu a.a2a_i:focus,
+      .a2a_menu a.a2a_i:hover,
+      .a2a_menu a.a2a_more:active,
+      .a2a_menu a.a2a_more:focus,
+      .a2a_menu a.a2a_more:hover {
+        color: #2a2a2a;
+        border-color: #eee;
+        border-style: solid;
+        background-color: #eee;
+        text-decoration: none;
+      }
+      .a2a_menu span.a2a_s_find {
+        background-size: 24px;
+        height: 24px;
+        left: 8px;
+        position: absolute;
+        top: 7px;
+        width: 24px;
+      }
+      .a2a_menu span.a2a_s_find svg {
+        background-color: #fff;
+      }
+      .a2a_menu span.a2a_s_find svg path {
+        fill: #ccc;
+      }
+      #a2a_menu_container {
+        display: inline-block;
+      }
+      .a2a_menu_find_container {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 2px 24px 2px 0;
+        position: relative;
+        text-align: left;
+      }
+      .a2a_cols_container .a2a_col1 {
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      #a2a_modal input,
+      #a2a_modal input[type="text"],
+      .a2a_menu input,
+      .a2a_menu input[type="text"] {
+        display: block;
+        background-image: none;
+        box-shadow: none;
+        line-height: 100%;
+        margin: 0;
+        outline: 0;
+        overflow: hidden;
+        padding: 0;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        -webkit-appearance: none;
+      }
+      #a2afeed_find_container input,
+      #a2afeed_find_container input[type="text"],
+      #a2apage_find_container input,
+      #a2apage_find_container input[type="text"] {
+        background-color: transparent;
+        border: 0;
+        box-sizing: content-box;
+        color: #2a2a2a;
+        float: none;
+        font: inherit;
+        font-size: 16px;
+        height: 28px;
+        line-height: 20px;
+        left: 38px;
+        outline: 0;
+        margin: 0;
+        max-width: initial;
+        min-height: initial;
+        padding: 2px 0;
+        position: relative;
+        width: 99%;
+      }
+      .a2a_clear {
+        clear: both;
+      }
+      .a2a_svg {
+        background-repeat: no-repeat;
+        display: block;
+        overflow: hidden;
+        height: 32px;
+        line-height: 32px;
+        padding: 0;
+        pointer-events: none;
+        width: 32px;
+      }
+      .a2a_svg svg {
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border: none;
+        display: block;
+        left: 0;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        top: 0;
+        width: auto;
+        height: auto;
+      }
+      a.a2a_i,
+      i.a2a_i {
+        display: block;
+        float: left;
+        border: 1px solid #fff;
+        line-height: 24px;
+        padding: 6px 8px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 132px;
+      }
+      a.a2a_i span,
+      a.a2a_more span {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: top;
+      }
+      a.a2a_i .a2a_svg {
+        margin: 0 6px 0 0;
+      }
+      a.a2a_i .a2a_svg,
+      a.a2a_more .a2a_svg {
+        background-size: 24px;
+        height: 24px;
+        line-height: 24px;
+        width: 24px;
+      }
+      a.a2a_sss:hover {
+        border-left: 1px solid #ccc;
+      }
+      a.a2a_more {
+        border-bottom: 1px solid #fff;
+        border-left: 0;
+        border-right: 0;
+        line-height: 24px;
+        margin: 6px 0 0;
+        padding: 6px;
+        -webkit-touch-callout: none;
+      }
+      a.a2a_more span {
+        height: 24px;
+        margin: 0 6px 0 0;
+      }
+      .a2a_kit .a2a_svg {
+        background-repeat: repeat;
+      }
+      .a2a_default_style a:empty,
+      .a2a_flex_style a:empty,
+      .a2a_floating_style a:empty,
+      .a2a_overlay_style a:empty {
+        display: none;
+      }
+      .a2a_color_buttons a,
+      .a2a_floating_style a {
+        text-decoration: none;
+      }
+      .a2a_default_style:not(.a2a_flex_style) a {
+        float: left;
+        line-height: 16px;
+        padding: 0 2px;
+      }
+      .a2a_default_style a:hover .a2a_svg,
+      .a2a_floating_style a:hover .a2a_svg,
+      .a2a_overlay_style a:hover .a2a_svg svg {
+        opacity: 0.7;
+      }
+      .a2a_overlay_style.a2a_default_style a:hover .a2a_svg {
+        opacity: 1;
+      }
+      .a2a_default_style .a2a_count,
+      .a2a_default_style .a2a_svg,
+      .a2a_floating_style .a2a_svg,
+      .a2a_menu .a2a_svg,
+      .a2a_vertical_style .a2a_count,
+      .a2a_vertical_style .a2a_svg {
+        border-radius: 4px;
+      }
+      .a2a_default_style .a2a_counter img,
+      .a2a_default_style .a2a_dd,
+      .a2a_default_style .a2a_svg {
+        float: left;
+      }
+      .a2a_default_style .a2a_img_text {
+        margin-right: 4px;
+      }
+      .a2a_default_style .a2a_divider {
+        border-left: 1px solid #000;
+        display: inline;
+        float: left;
+        height: 16px;
+        line-height: 16px;
+        margin: 0 5px;
+      }
+      .a2a_kit a {
+        cursor: pointer;
+        transition: none;
+      }
+      .a2a_floating_style {
+        background-color: #fff;
+        border-radius: 6px;
+        position: fixed;
+        z-index: 9999995;
+      }
+      .a2a_overlay_style {
+        z-index: 2147483647;
+      }
+      .a2a_floating_style,
+      .a2a_overlay_style {
+        animation: a2aFadeIn 0.2s ease-in;
+        padding: 4px;
+      }
+      .a2a_vertical_style:not(.a2a_flex_style) a {
+        clear: left;
+        display: block;
+        overflow: hidden;
+        padding: 4px;
+      }
+      .a2a_floating_style.a2a_default_style {
+        bottom: 0;
+      }
+      .a2a_floating_style.a2a_default_style a,
+      .a2a_overlay_style.a2a_default_style a {
+        padding: 4px;
+      }
+      .a2a_count {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        color: #2a2a2a;
+        display: block;
+        float: left;
+        font: 12px Arial, Helvetica, sans-serif;
+        height: 16px;
+        margin-left: 4px;
+        position: relative;
+        text-align: center;
+        width: 50px;
+      }
+      .a2a_count:after,
+      .a2a_count:before {
+        border: solid transparent;
+        border-width: 4px 4px 4px 0;
+        content: "";
+        height: 0;
+        left: 0;
+        line-height: 0;
+        margin: -4px 0 0 -4px;
+        position: absolute;
+        top: 50%;
+        width: 0;
+      }
+      .a2a_count:before {
+        border-right-color: #ccc;
+      }
+      .a2a_count:after {
+        border-right-color: #fff;
+        margin-left: -3px;
+      }
+      .a2a_count span {
+        animation: a2aFadeIn 0.14s ease-in;
+      }
+      .a2a_vertical_style .a2a_counter img {
+        display: block;
+      }
+      .a2a_vertical_style .a2a_count {
+        float: none;
+        margin-left: 0;
+        margin-top: 6px;
+      }
+      .a2a_vertical_style .a2a_count:after,
+      .a2a_vertical_style .a2a_count:before {
+        border: solid transparent;
+        border-width: 0 4px 4px 4px;
+        content: "";
+        height: 0;
+        left: 50%;
+        line-height: 0;
+        margin: -4px 0 0 -4px;
+        position: absolute;
+        top: 0;
+        width: 0;
+      }
+      .a2a_vertical_style .a2a_count:before {
+        border-bottom-color: #ccc;
+      }
+      .a2a_vertical_style .a2a_count:after {
+        border-bottom-color: #fff;
+        margin-top: -3px;
+      }
+      .a2a_color_buttons .a2a_count,
+      .a2a_color_buttons .a2a_count:after,
+      .a2a_color_buttons .a2a_count:before,
+      .a2a_color_buttons.a2a_vertical_style .a2a_count:after,
+      .a2a_color_buttons.a2a_vertical_style .a2a_count:before {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        float: none;
+        width: auto;
+      }
+      .a2a_color_buttons.a2a_vertical_style .a2a_count {
+        margin-top: 0;
+      }
+      .a2a_flex_style {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+      }
+      .a2a_default_style.a2a_flex_style {
+        left: 0;
+        right: 0;
+        width: 100%;
+      }
+      .a2a_vertical_style.a2a_flex_style {
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+      }
+      .a2a_flex_style a {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        padding: 4px;
+      }
+      .a2a_flex_style.a2a_vertical_style a {
+        flex-direction: column;
+      }
+      .a2a_floating_style.a2a_color_buttons,
+      .a2a_floating_style.a2a_flex_style {
+        border-radius: 0;
+        padding: 0;
+      }
+      .a2a_floating_style.a2a_default_style.a2a_flex_style {
+        bottom: 0;
+      }
+      .a2a_kit.a2a_flex_style .a2a_counter img,
+      .a2a_kit.a2a_flex_style .a2a_dd,
+      .a2a_kit.a2a_flex_style .a2a_svg {
+        float: none;
+      }
+      .a2a_nowrap {
+        white-space: nowrap;
+      }
+      .a2a_note {
+        margin: 0 auto;
+        padding: 9px;
+        font-size: 12px;
+        text-align: center;
+      }
+      .a2a_note .a2a_note_note {
+        margin: 0;
+        color: #2a2a2a;
+      }
+      .a2a_wide a {
+        display: block;
+        margin-top: 3px;
+        border-top: 1px solid #eee;
+        text-align: center;
+      }
+      .a2a_label {
+        position: absolute !important;
+        clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+        -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+        overflow: hidden;
+        height: 1px;
+        width: 1px;
+      }
+      .a2a_kit,
+      .a2a_menu,
+      .a2a_modal,
+      .a2a_overlay {
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        outline: 0;
+      }
+      .a2a_dd {
+        -webkit-user-drag: none;
+      }
+      .a2a_dd img {
+        border: 0;
+      }
+      .a2a_button_facebook_like iframe {
+        max-width: none;
+      }
+    </style>
+    <style type="text/css">
+      .lf-progress {
+        -webkit-appearance: none;
+        -moz-apperance: none;
+        width: 100%;
+        /* margin: 0 10px; */
+        height: 4px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .lf-progress:focus {
+        outline: none;
+        border: none;
+      }
+      .lf-progress::-moz-range-track {
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+      }
+      .lf-progress::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-moz-range-thumb {
+        -moz-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      .lf-progress::-ms-fill-lower {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-fill-upper {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-thumb {
+        border: 0;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress:focus::-ms-fill-lower {
+        background: #ccc;
+      }
+      .lf-progress:focus::-ms-fill-upper {
+        background: #ccc;
+      }
+      .lf-player-container :focus {
+        outline: 0;
+      }
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-player-btn-container {
+        display: flex;
+        align-items: center;
+      }
+      .lf-player-btn {
+        cursor: pointer;
+        fill: #999;
+        width: 14px;
+      }
+
+      .lf-player-btn.active {
+        fill: #555;
+      }
+
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        background-color: #ffffff;
+        opacity: 1;
+
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+        padding: 10px;
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-arrow {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        bottom: -9px;
+        border-style: solid;
+        border-width: 10px 10px 0px 10px;
+      }
+
+      .lf-left-align,
+      .lf-left-align .lfarrow {
+        left: 0;
+        right: unset;
+      }
+
+      .lf-right-align,
+      .lf-right-align .lf-arrow {
+        right: 0;
+        left: unset;
+      }
+
+      .lf-text-input {
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 3px;
+        width: 60px;
+        margin: 0;
+      }
+
+      .lf-color-picker {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 90px;
+      }
+
+      .lf-color-selectors {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .lf-color-component {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lf-color-component strong {
+        width: 40px;
+      }
+
+      .lf-color-component input[type="range"] {
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-component input[type="number"] {
+        width: 50px;
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-preview {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5px;
+      }
+
+      .lf-preview {
+        height: 60px;
+        width: 60px;
+      }
+
+      .lf-popover-snapshot {
+        width: 150px;
+      }
+      .lf-popover-snapshot h5 {
+        margin: 5px 0 10px 0;
+        font-size: 0.75rem;
+      }
+      .lf-popover-snapshot a {
+        display: block;
+        text-decoration: none;
+      }
+      .lf-popover-snapshot a:before {
+        content: "⥼";
+        margin-right: 5px;
+      }
+      .lf-popover-snapshot .lf-note {
+        display: block;
+        margin-top: 10px;
+        color: #999;
+      }
+      .lf-player-controls > div {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+      .lf-player-controls > div:first-child {
+        margin-left: 0px;
+      }
+      .lf-player-controls > div:last-child {
+        margin-right: 0px;
+      }
+    </style>
+    <style id="_goober">
+      @keyframes go2264125279 {
+        from {
+          transform: scale(0) rotate(45deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(45deg);
+          opacity: 1;
+        }
+      }
+      @keyframes go3020080000 {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes go463499852 {
+        from {
+          transform: scale(0) rotate(90deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(90deg);
+          opacity: 1;
+        }
+      }
+      @keyframes go1268368563 {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes go1310225428 {
+        from {
+          transform: scale(0) rotate(45deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(45deg);
+          opacity: 1;
+        }
+      }
+      @keyframes go651618207 {
+        0% {
+          height: 0;
+          width: 0;
+          opacity: 0;
+        }
+        40% {
+          height: 0;
+          width: 6px;
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          height: 10px;
+        }
+      }
+      @keyframes go901347462 {
+        from {
+          transform: scale(0.6);
+          opacity: 0.4;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .go4109123758 {
+        z-index: 9999;
+      }
+      .go4109123758 > * {
+        pointer-events: auto;
+      }
+    </style>
+  </head>
+
+  <body
+    class="home page-template page-template-templates page-template-template-flexible page-template-templatestemplate-flexible-php page page-id-12 theme-blue"
+    data-aos-easing="ease-out"
+    data-aos-duration="600"
+    data-aos-delay="0"
+  >
+    <div class="wrapper">
+      <header class="site-header aos-init aos-animate is-sticky" role="banner" data-aos="fade-down">
+        <div class="site-header__logo">
+          <div class="inner-frame">
+            <a href="https://www.winwinit.eu" class="-link">
+              <img
+                src="https://www.winwinit.eu/wp-content/uploads/2021/04/logo_blue_color.svg"
+                alt="WinWinIt"
+                class="logo-img"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="site-header__links">
+          <div class="-mb-phone inner-frame">
+            <div class="-dropdown__header-top">
+              <a href="tel:390287036386" class="-dropdown__header-phone">+39 02 87036386 </a>
+              <a href="/contact/" class="-dropdown__header-cta btn-primary">Consulenza gratuita </a>
+            </div>
+          </div>
+
+          <div class="-burger-block inner-frame">
+            <div class="-burger-icon js-mobile-toggle" aria-expanded="false">
+              <span class="-lines"></span>
+              <div class="-menu">Menu</div>
+            </div>
+          </div>
+
+          <div class="-dropdown">
+            <div class="-dropdown__header-top">
+              <div class="inner-frame">
+                <a href="tel:390287036386" class="-dropdown__header-phone">+39 02 87036386 </a>
+                <a href="/contact/" class="-dropdown__header-links">Contact </a>
+                <a href="/about/" class="-dropdown__header-links">About </a>
+              </div>
+            </div>
+
+            <div class="-dropdown__header-main">
+              <div class="inner-frame">
+                <ul id="menu-header-menu" class="-header-menu">
+                  <li
+                    id="nav-menu-item-141"
+                    class="menu-col-1 main-menu-item menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"
+                  >
+                    <a href="https://www.winwinit.eu/solutions/" class="menu-link main-menu-link"
+                      ><span class="menu-item-title">Solutions</span></a
+                    >
+                    <ul class="sub-menu">
+                      <li
+                        id="nav-menu-item-288"
+                        class="menu-col-2 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"
+                      >
+                        <a
+                          href="https://www.winwinit.eu/solutions/martech-hrtech/"
+                          class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-5.svg"
+                            alt="Icon Customer Engagement"
+                          /><span class="menu-item-title">MarTech &amp; HrTech</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-291"
+                        class="menu-col-2 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"
+                      >
+                        <a
+                          href="https://www.winwinit.eu/solutions/tech-innovation/"
+                          class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-1.svg"
+                            alt="Icon smartphone"
+                          /><span class="menu-item-title">Internet of Things</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-289"
+                        class="menu-col-2 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"
+                      >
+                        <a
+                          href="https://www.winwinit.eu/solutions/retailtech/"
+                          class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-23.png"
+                            alt="Icon screen with arrows"
+                          /><span class="menu-item-title">RetailTech</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-290"
+                        class="menu-col-2 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-post_type menu-item-object-page"
+                      >
+                        <a
+                          href="https://www.winwinit.eu/solutions/fintech-legaltech/"
+                          class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-18.svg"
+                            alt="Icon handshake"
+                          /><span class="menu-item-title">FinTech &amp; LegalTech</span></a
+                        >
+                      </li>
+                    </ul>
+                    <span class="menu-item__toggler"></span>
+                  </li>
+                  <li
+                    id="nav-menu-item-279"
+                    class="menu-col-2 main-menu-item menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"
+                  >
+                    <a href="https://www.winwinit.eu/industries/" class="menu-link main-menu-link"
+                      ><span class="menu-item-title">Industries</span></a
+                    >
+                    <ul class="sub-menu">
+                      <li
+                        id="nav-menu-item-755"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#automotive" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-17.svg"
+                            alt="Icon car"
+                          /><span class="menu-item-title">Automotive</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-756"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#energy&amp;utilities" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-14.svg"
+                            alt="Icon Energy and utilities"
+                          /><span class="menu-item-title">Energy &amp; Utilities</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-757"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#fashion&amp;luxury" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-13.svg"
+                            alt="Icon Fashion &amp; Luxury"
+                          /><span class="menu-item-title">Fashion &amp; Luxury</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-758"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a
+                          href="/industries/#financial-institutions"
+                          class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-4.svg"
+                            alt="Icon Financial Institutions"
+                          /><span class="menu-item-title">Financial Institutions</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-759"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#retail" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-11.svg"
+                            alt="Icon Retail shopping cart"
+                          /><span class="menu-item-title">Retail</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-760"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#insurance" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-10.svg"
+                            alt="Icon Insurance"
+                          /><span class="menu-item-title">Insurance</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-761"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#telco&amp;media" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-16.svg"
+                            alt="Icon Telco &amp; Media"
+                          /><span class="menu-item-title">Telco &amp; Media</span></a
+                        >
+                      </li>
+                      <li
+                        id="nav-menu-item-762"
+                        class="menu-col-3 sub-menu-item menu-item-odd menu-item-depth-1 menu-item menu-item-type-custom menu-item-object-custom"
+                      >
+                        <a href="/industries/#government" class="menu-link sub-menu-link"
+                          ><img
+                            class=""
+                            src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-12.svg"
+                            alt="Icon Government buildings"
+                          /><span class="menu-item-title">Government</span></a
+                        >
+                      </li>
+                    </ul>
+                    <span class="menu-item__toggler"></span>
+                  </li>
+                  <li
+                    id="nav-menu-item-296"
+                    class="menu-col-3 main-menu-item menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page"
+                  >
+                    <a href="https://www.winwinit.eu/resources/" class="menu-link main-menu-link"
+                      ><span class="menu-item-title">Resources</span></a
+                    >
+                  </li>
+                </ul>
+                <a href="/contact/" class="-dropdown__header-cta btn-primary"
+                  >Consulenza gratuita
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="site-content" role="main">
+        <section class="hero-banner home pr-scroll">
+          <div class="hero-banner__image home">
+            <picture>
+              <source
+                media="(min-width: 1025px)"
+                type="image/webp"
+                srcset="
+                  https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-de3fd228e551.webp
+                "
+              />
+              <source
+                media="(max-width: 1025px)"
+                type="image/webp"
+                srcset="
+                  https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-c3242cdb109d.webp
+                "
+              />
+              <source
+                media="(max-width: 1025px)"
+                type="image/jpg"
+                srcset="https://www.winwinit.eu/wp-content/uploads/2021/05/Hero-Home-Mob.jpg"
+              />
+              <img
+                class="lazy loaded"
+                alt="Services, Solutions, Software &amp; DevOps"
+                data-ll-status="loaded"
+                src="https://www.winwinit.eu/wp-content/uploads/2021/05/Hero-Home.jpg"
+              />
+            </picture>
+
+            <div class="net-graph" id="particles-js">
+              <canvas
+                class="particles-js-canvas-el"
+                style="width: 100%; height: 100%"
+                width="1376"
+                height="1124"
+              ></canvas>
+            </div>
+          </div>
+          <div class="inner-frame">
+            <div class="hero-banner__text home aos-init aos-animate" data-aos="fade-left">
+              <h1 class="title--h1">Services, Solutions, Software &amp; DevOps</h1>
+
+              <p class="text--lg">La Digital Transformation al servizio dei processi aziendali.</p>
+
+              <div class="hero-banner__cta">
+                <a href="/solutions/" class="btn-primary">Scopri le nostre soluzioni </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="accordion net-bg">
+          <div class="inner-frame aos-init aos-animate" data-aos="fade-up">
+            <h2 class="title--h2">
+              <p>Una panoramica sulle nostre</p>
+              <p><strong>Soluzioni</strong></p>
+            </h2>
+          </div>
+          <div
+            class="accordion-tabs js-tabs is-initialized tabs-allowed aos-init aos-animate"
+            id="js-tabs-accordion"
+            data-aos="fade-in"
+          >
+            <div class="accordion-tabs__nav">
+              <div class="inner-frame">
+                <ul role="tablist" class="tabs-list">
+                  <li role="presentation" class="tabs-list__item">
+                    <a
+                      href="#section1"
+                      role="tab"
+                      id="tab1"
+                      aria-controls="section1"
+                      class="tabs-list__link tabs-trigger js-tabs-trigger is-selected"
+                      aria-selected="true"
+                    >
+                      <img
+                        alt="MarTech &amp; HrTech"
+                        class="lazy loaded"
+                        data-ll-status="loaded"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-5.svg"
+                      />
+                      <div class="text--md">MarTech &amp; HrTech</div>
+                    </a>
+                  </li>
+                  <li role="presentation" class="tabs-list__item">
+                    <a
+                      href="#section2"
+                      role="tab"
+                      id="tab2"
+                      aria-controls="section2"
+                      class="tabs-list__link tabs-trigger js-tabs-trigger"
+                      aria-selected="false"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt="Internet of Things"
+                        class="lazy loaded"
+                        data-ll-status="loaded"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-1.svg"
+                      />
+                      <div class="text--md">Internet of Things</div>
+                    </a>
+                  </li>
+                  <li role="presentation" class="tabs-list__item">
+                    <a
+                      href="#section3"
+                      role="tab"
+                      id="tab3"
+                      aria-controls="section3"
+                      class="tabs-list__link tabs-trigger js-tabs-trigger"
+                      aria-selected="false"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt="RetailTech"
+                        class="lazy loaded"
+                        data-ll-status="loaded"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-23.png"
+                      />
+                      <div class="text--md">RetailTech</div>
+                    </a>
+                  </li>
+                  <li role="presentation" class="tabs-list__item">
+                    <a
+                      href="#section4"
+                      role="tab"
+                      id="tab4"
+                      aria-controls="section4"
+                      class="tabs-list__link tabs-trigger js-tabs-trigger"
+                      aria-selected="false"
+                      tabindex="-1"
+                    >
+                      <img
+                        alt=" FinTech &amp; LegalTech"
+                        class="lazy loaded"
+                        data-ll-status="loaded"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-6.svg"
+                      />
+                      <div class="text--md">FinTech &amp; LegalTech</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion-tabs__content">
+              <section
+                id="section4"
+                role="tabpanel"
+                aria-labelledby="tab4"
+                class="tabs-panel js-tabs-panel is-open"
+              >
+                <div
+                  class="accordion-trigger js-accordion-trigger"
+                  aria-controls="section4"
+                  aria-expanded="true"
+                  tabindex="0"
+                >
+                  <img
+                    data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-5.svg"
+                    alt="MarTech &amp; HrTech"
+                    class="lazy"
+                  />
+                  <div class="text--md">MarTech &amp; HrTech</div>
+                </div>
+                <div class="content is-open" aria-hidden="false">
+                  <div class="accordion-tabs__image">
+                    <div class="accordion-tabs__logo">
+                      <img
+                        class="lazy"
+                        alt="Team,Of,Businessmen,Work,Together,In,Office,With,Modern,Effect."
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/04/winloy-y-w.svg"
+                      />
+                    </div>
+
+                    <img
+                      alt="Team,Of,Businessmen,Work,Together,In,Office,With,Modern,Effect."
+                      class="accordion-tabs__illustration lazy loaded"
+                      data-ll-status="loaded"
+                      src="https://www.winwinit.eu/wp-content/uploads/2021/04/shutterstock_688860325-1.jpg"
+                    />
+
+                    <div class="inner-frame">
+                      <div class="accordion-tabs__text">
+                        <h3 class="title--h3">MarTech &amp; HrTech</h3>
+                        <div class="text--sm c-mine">
+                          Incentivare le Reti Commerciali, premiare i Dipendenti e fidelizzare i
+                          Clienti, attraverso la realizzazione di programmi unici e differenzianti.
+                        </div>
+
+                        <a href="/solutions/martech-hrtech/" class="btn-primary">Scopri di più </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                id="section4"
+                role="tabpanel"
+                aria-labelledby="tab4"
+                class="tabs-panel js-tabs-panel is-hidden"
+                tabindex="-1"
+              >
+                <div
+                  class="accordion-trigger js-accordion-trigger"
+                  aria-controls="section4"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <img
+                    data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-1.svg"
+                    alt="IoT"
+                    class="lazy"
+                  />
+                  <div class="text--md">IoT</div>
+                </div>
+                <div class="content is-hidden" aria-hidden="true">
+                  <div class="accordion-tabs__image">
+                    <div class="accordion-tabs__logo">
+                      <img
+                        class="lazy"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/04/wintech-o-w.svg"
+                        alt="Virtual Reality glasses"
+                      />
+                    </div>
+
+                    <img
+                      data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/innovation-technology-min.jpg"
+                      alt="Virtual Reality glasses"
+                      class="accordion-tabs__illustration lazy"
+                    />
+
+                    <div class="inner-frame">
+                      <div class="accordion-tabs__text">
+                        <h3 class="title--h3">IoT</h3>
+                        <div class="text--sm c-mine">
+                          La tecnologia Open Core per disegnare, sviluppare, evolvere e gestire
+                          devices connessi ad ogni network, attraverso 5 pilastri fondamentali:<br />-
+                          Edge devices<br />
+                          - Fleet Management<br />
+                          - OTA Update<br />
+                          - Events Streaming<br />
+                          - Remote Installer
+                        </div>
+
+                        <a href="/solutions/tech-innovation/" class="btn-primary">Scopri di più </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                id="section4"
+                role="tabpanel"
+                aria-labelledby="tab4"
+                class="tabs-panel js-tabs-panel is-hidden"
+                tabindex="-1"
+              >
+                <div
+                  class="accordion-trigger js-accordion-trigger"
+                  aria-controls="section4"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <img
+                    data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-23.png"
+                    alt="RetailTech"
+                    class="lazy"
+                  />
+                  <div class="text--md">RetailTech</div>
+                </div>
+                <div class="content is-hidden" aria-hidden="true">
+                  <div class="accordion-tabs__image">
+                    <div class="accordion-tabs__logo">
+                      <img
+                        class="lazy"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/05/winder-p-o.svg"
+                        alt="Workplace meeting"
+                      />
+                    </div>
+
+                    <img
+                      data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/services-consulting-min.jpg"
+                      alt="Workplace meeting"
+                      class="accordion-tabs__illustration lazy"
+                    />
+
+                    <div class="inner-frame">
+                      <div class="accordion-tabs__text">
+                        <h3 class="title--h3">RetailTech</h3>
+                        <div class="text--sm c-mine">
+                          Abilitare cambiamenti, innovare processi e abbattere barriere tecnologiche
+                          per creare esperienze no-channel.
+                        </div>
+
+                        <a href="/solutions/retailtech/" class="btn-primary">Scopri di più </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                id="section4"
+                role="tabpanel"
+                aria-labelledby="tab4"
+                class="tabs-panel js-tabs-panel is-hidden"
+                tabindex="-1"
+              >
+                <div
+                  class="accordion-trigger js-accordion-trigger"
+                  aria-controls="section4"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <img
+                    data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-6.svg"
+                    alt="FinTech &amp; LegalTech"
+                    class="lazy"
+                  />
+                  <div class="text--md">FinTech &amp; LegalTech</div>
+                </div>
+                <div class="content is-hidden" aria-hidden="true">
+                  <div class="accordion-tabs__image">
+                    <div class="accordion-tabs__logo">
+                      <img
+                        class="lazy"
+                        src="https://www.winwinit.eu/wp-content/uploads/2021/05/winder-p-o.svg"
+                        alt="Typing on laptop"
+                      />
+                    </div>
+
+                    <img
+                      data-src="https://www.winwinit.eu/wp-content/uploads/2021/06/fintech-legalfarm.jpg"
+                      alt="Typing on laptop"
+                      class="accordion-tabs__illustration lazy"
+                    />
+
+                    <div class="inner-frame">
+                      <div class="accordion-tabs__text">
+                        <h3 class="title--h3">FinTech &amp; LegalTech</h3>
+                        <div class="text--sm c-mine">
+                          Gestire in maniera completamente digitale ed omnicanale il processo di
+                          incasso ed il recupero del credito non incassato sia nella fase
+                          stragiudiziale che giudiziale.
+                        </div>
+
+                        <a href="/solutions/fintech-legaltech/" class="btn-primary"
+                          >Scopri di più
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="support left"
+          style="
+            background-image: url(https://www.winwinit.eu/wp-content/uploads/2021/05/Consulting.jpg);
+          "
+        >
+          <div class="inner-frame">
+            <header data-aos="fade-up" class="aos-init aos-animate">
+              <h2 class="title--h2">
+                <p>
+                  Consulenza architetturale e<br />
+                  <strong>Progetti Custom</strong>
+                </p>
+              </h2>
+
+              <p class="text--md bold">
+                Attraverso il nostro team di professionisti, offriamo anche servizi di assessment e
+                consulenza architetturale IT <br />e realizziamo progetti di sviluppo software
+                personalizzati per esigenze specifiche
+              </p>
+            </header>
+
+            <div class="support__wrap">
+              <div class="support__illustration">
+                <img
+                  alt="Womans profile"
+                  class="support__img-left lazy aos-init loaded aos-animate"
+                  data-aos="fade-in"
+                  data-aos-delay="100"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/iStock-1204589859-min.jpg"
+                />
+
+                <img
+                  alt="Man using tablet with virtual charts pointing up"
+                  class="support__img-right lazy aos-init loaded aos-animate"
+                  data-aos="fade-in"
+                  data-aos-delay="300"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/shutterstock_1169956426-min.jpg"
+                />
+              </div>
+              <div class="support__list">
+                <div
+                  class="support__list-item aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <svg
+                    class="support__icon"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0V26H26V9.19293L21.7344 13.4586V21.7344H4.26562V4.26562H12.5414L16.8071 0H0ZM22.3168 0.328488L12.9096 9.73724L9.5485 6.37613L6.10172 9.82449L12.9095 16.6307L16.3562 13.1839L25.7635 3.77516L22.3168 0.328488Z"
+                    ></path>
+                  </svg>
+                  <p class="support__text text--sm">Customer Experience Strategy</p>
+                </div>
+                <div
+                  class="support__list-item aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <svg
+                    class="support__icon"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0V26H26V9.19293L21.7344 13.4586V21.7344H4.26562V4.26562H12.5414L16.8071 0H0ZM22.3168 0.328488L12.9096 9.73724L9.5485 6.37613L6.10172 9.82449L12.9095 16.6307L16.3562 13.1839L25.7635 3.77516L22.3168 0.328488Z"
+                    ></path>
+                  </svg>
+                  <p class="support__text text--sm">Customer Experience Design</p>
+                </div>
+                <div
+                  class="support__list-item aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <svg
+                    class="support__icon"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0V26H26V9.19293L21.7344 13.4586V21.7344H4.26562V4.26562H12.5414L16.8071 0H0ZM22.3168 0.328488L12.9096 9.73724L9.5485 6.37613L6.10172 9.82449L12.9095 16.6307L16.3562 13.1839L25.7635 3.77516L22.3168 0.328488Z"
+                    ></path>
+                  </svg>
+                  <p class="support__text text--sm">Hybrid Platform &amp; Solutions</p>
+                </div>
+
+                <div class="support__cta aos-init aos-animate" data-aos="fade-up"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-studies">
+          <div class="inner-frame">
+            <h2 class="title--h2">Le nostre storie di successo</h2>
+            <div class="text--md">
+              <p>
+                Dall’ideazione alla realizzazione, creiamo soluzioni innovative<br />
+                per accompagnare i nostri Clienti verso il
+                <strong>raggiungimento dei loro obiettivi</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="case-studies__slider">
+            <div
+              class="case-studies__active swiper-container js-cs-slider swiper-container-fade swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events"
+            >
+              <div
+                class="swiper-wrapper"
+                id="swiper-wrapper-4af4e6b3fa9aff77"
+                aria-live="polite"
+                style="transition-duration: 0ms"
+              >
+                <div
+                  class="swiper-slide case-studies__item swiper-slide-active"
+                  style="
+                    width: 624.545px;
+                    opacity: 1;
+                    transform: translate3d(0px, 0px, 0px);
+                    margin-right: 10px;
+                    transition-duration: 0ms;
+                  "
+                  role="group"
+                  aria-label="1 / 5"
+                >
+                  <div class="case-studies__desc">
+                    <h3 class="title--h3">Club FCA Bank</h3>
+
+                    <div class="js-expandable-area hide">
+                      <div class="text--sm c-mine js-lines-count">
+                        Programma di Loyalty e Cashback di FCA Bank che premia la <br />
+                        fedeltà dei Clienti titolari di una carta Club FCA Bank <br />
+                        oppure di una carta di Credito FCA Bank. <br />
+                        I Clienti possono utilizzare i punti accumulati nel proprio Digital Wallet
+                        per fare acquisti a condizioni vantaggiose sul nostro Marketplace di
+                        prodotti e servizi. La sezione dedicata al Cashback consente agli utenti
+                        anche di guadagnare facendo shopping.
+                      </div>
+
+                      <div class="js-expand">
+                        <button class="btn-expand">Scopri di più</button>
+                      </div>
+                      <div class="js-condense">
+                        <button class="btn-condense">Riduci</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-studies__image">
+                    <img
+                      src="https://www.winwinit.eu/wp-content/uploads/2022/03/Schermata-2022-03-09-alle-16.32.01.png"
+                      alt="Club FCA Bank"
+                      class="case-studies__img"
+                    />
+                    <div class="case-studies__title">
+                      <p class="text--md">Club FCA Bank</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide case-studies__item swiper-slide-next"
+                  style="
+                    width: 624.545px;
+                    opacity: 0;
+                    transform: translate3d(-635px, 0px, 0px);
+                    margin-right: 10px;
+                    transition-duration: 0ms;
+                  "
+                  role="group"
+                  aria-label="2 / 5"
+                >
+                  <div class="case-studies__desc">
+                    <h3 class="title--h3">
+                      Cattolica<br />
+                      Active Club
+                    </h3>
+
+                    <div class="js-expandable-area hide">
+                      <div class="text--sm c-mine js-lines-count">
+                        Programma di loyalty di Cattolica Assicurazioni che consente ai suoi Clienti
+                        Active di fare acquisti a condizioni vantaggiose su un Marketplace di
+                        prodotti e servizi e di guadagnare un Cashback facendo shopping. Il Cashback
+                        accumulato potrà essere utilizzato per acquistare un prodotto assicurativo.
+                      </div>
+
+                      <div class="js-expand">
+                        <button class="btn-expand">Scopri di più</button>
+                      </div>
+                      <div class="js-condense">
+                        <button class="btn-condense">Riduci</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-studies__image">
+                    <img
+                      src="https://www.winwinit.eu/wp-content/uploads/2022/03/Schermata-2022-03-09-alle-16.30.16.png"
+                      alt="Cattolica</br> Active Club"
+                      class="case-studies__img"
+                    />
+                    <div class="case-studies__title">
+                      <p class="text--md">
+                        Cattolica<br />
+                        Active Club
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide case-studies__item"
+                  style="
+                    width: 624.545px;
+                    opacity: 0;
+                    transform: translate3d(-1269px, 0px, 0px);
+                    margin-right: 10px;
+                    transition-duration: 0ms;
+                  "
+                  role="group"
+                  aria-label="3 / 5"
+                >
+                  <div class="case-studies__desc">
+                    <h3 class="title--h3">Libero Cashback</h3>
+
+                    <div class="js-expandable-area hide">
+                      <div class="text--sm c-mine js-lines-count">
+                        Libero Cashback è l'esclusivo programma di Cashback che permette agli utenti
+                        registrati di fare shopping su centinaia di e-commerce convenzionati
+                        guadagnando una percentuale di cashback. Il cashback guadagnato viene
+                        accumulato in un wallet dedicato e può essere accreditato sul conto corrente
+                        dell'utente al raggiungimento della soglia dei €30.
+                      </div>
+
+                      <div class="js-expand">
+                        <button class="btn-expand">Scopri di più</button>
+                      </div>
+                      <div class="js-condense">
+                        <button class="btn-condense">Riduci</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-studies__image">
+                    <img
+                      src="https://www.winwinit.eu/wp-content/uploads/2022/03/Schermata-2022-03-09-alle-16.28.53.png"
+                      alt="Libero Cashback"
+                      class="case-studies__img"
+                    />
+                    <div class="case-studies__title">
+                      <p class="text--md">Libero Cashback</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide case-studies__item"
+                  style="
+                    width: 624.545px;
+                    opacity: 0;
+                    transform: translate3d(-1904px, 0px, 0px);
+                    margin-right: 10px;
+                    transition-duration: 0ms;
+                  "
+                  role="group"
+                  aria-label="4 / 5"
+                >
+                  <div class="case-studies__desc">
+                    <h3 class="title--h3">Libero Club</h3>
+
+                    <div class="js-expandable-area hide">
+                      <div class="text--sm c-mine js-lines-count">
+                        Marketplace esclusivo di prodotti delle migliori marche, servizi, esperienze
+                        e gift card, proposti a condizioni vantaggiose con sconti dal 15% al 60% e
+                        offerte flash con sconti ancora maggiori.
+                      </div>
+
+                      <div class="js-expand">
+                        <button class="btn-expand">Scopri di più</button>
+                      </div>
+                      <div class="js-condense">
+                        <button class="btn-condense">Riduci</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-studies__image">
+                    <img
+                      src="https://www.winwinit.eu/wp-content/uploads/2022/03/Schermata-2022-03-09-alle-16.45.58.png"
+                      alt="Libero Club"
+                      class="case-studies__img"
+                    />
+                    <div class="case-studies__title">
+                      <p class="text--md">Libero Club</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide case-studies__item"
+                  style="
+                    width: 624.545px;
+                    opacity: 0;
+                    transform: translate3d(-2538px, 0px, 0px);
+                    margin-right: 10px;
+                    transition-duration: 0ms;
+                  "
+                  role="group"
+                  aria-label="5 / 5"
+                >
+                  <div class="case-studies__desc">
+                    <h3 class="title--h3">G4Mob</h3>
+
+                    <div class="js-expandable-area hide">
+                      <div class="text--sm c-mine js-lines-count">
+                        Il progetto si pone l'obiettivo di sviluppare l'utilizzo e la conoscenza
+                        delle funzionalità della Smart City, stimolare la partecipazione attiva dei
+                        cittadini e l'apprendimento delle buone pratiche di "sustainable living",
+                        mettere a disposizione di tutte le Smart City un driver di innovazione in
+                        grado di incidere efficacemente sulla sostenibilità ambientale e
+                        sull'efficienza energetica. La soluzione scelta è la gamification: Il
+                        "Social game" è utilizzato come mezzo e non come fine, garantisce un plus di
+                        concentrazione, interesse attivo e assimilazione delle informazioni rispetto
+                        ai metodi tradizionali di formazione. La soluzione è basata su un driver di
+                        innovazione in forte crescita trasversale. Per la realizzazione del progetto
+                        è stato concesso un sostegno pubblico pari a €286.703,06.<br />
+                        Visita il sito https://g4mobility.it/.
+                      </div>
+
+                      <div class="js-expand">
+                        <button class="btn-expand">Scopri di più</button>
+                      </div>
+                      <div class="js-condense">
+                        <button class="btn-condense">Riduci</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="case-studies__image">
+                    <img
+                      src="https://www.winwinit.eu/wp-content/uploads/2022/03/Schermata-2022-03-09-alle-16.35.43.png"
+                      alt="G4Mob"
+                      class="case-studies__img"
+                    />
+                    <div class="case-studies__title">
+                      <p class="text--md">G4Mob</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="case-studies__pagination js-cs-pagination swiper-pagination swiper-pagination-custom"
+              >
+                01 / 05
+              </div>
+              <div
+                class="case-studies__next swiper-button-next js-cs-carousel-next"
+                tabindex="0"
+                role="button"
+                aria-label="Next slide"
+                aria-controls="swiper-wrapper-4af4e6b3fa9aff77"
+                aria-disabled="false"
+              ></div>
+              <div
+                class="case-studies__prev swiper-button-prev js-cs-carousel-prev swiper-button-disabled"
+                tabindex="-1"
+                role="button"
+                aria-label="Previous slide"
+                aria-controls="swiper-wrapper-4af4e6b3fa9aff77"
+                aria-disabled="true"
+              ></div>
+              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="partners">
+          <div class="inner-frame">
+            <h4 class="title--h4 aos-init aos-animate" data-aos="fade-in">I nostri Partners:</h4>
+            <div class="partners__wrap aos-init aos-animate" data-aos="fade-in">
+              <a
+                href="https://www.fabrick.com/it/"
+                target="_blank"
+                class="partners__item"
+                rel="nofollow noopener"
+              >
+                <img
+                  alt="Logo Fabrick"
+                  class="lazy loaded"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/06/logo_fabrick.png"
+                />
+              </a>
+              <a
+                href="https://living3d.it/"
+                target="_blank"
+                class="partners__item"
+                rel="nofollow noopener"
+              >
+                <img
+                  alt="Living3D logo"
+                  class="lazy loaded"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/logo-2.png"
+                />
+              </a>
+              <a
+                href="https://www.welsol.it/"
+                target="_blank"
+                class="partners__item"
+                rel="nofollow noopener"
+              >
+                <img
+                  alt="GoWelf logo"
+                  class="lazy loaded"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/logo-3.png"
+                />
+              </a>
+              <a
+                href="https://www.nautes.com/"
+                target="_blank"
+                class="partners__item"
+                rel="nofollow noopener"
+              >
+                <img
+                  alt="Nautes logo"
+                  class="lazy loaded"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/logo-4.png"
+                />
+              </a>
+              <a
+                href="https://www.confluent.io/"
+                target=""
+                class="partners__item"
+                rel="nofollow noopener"
+              >
+                <img
+                  alt="Logo Confluent"
+                  class="lazy loaded"
+                  data-ll-status="loaded"
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/06/Confluent_Logo.png"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-cta">
+          <div
+            class="text-cta__image"
+            style="
+              background-image: url('https://www.winwinit.eu/wp-content/uploads/2021/04/digital-age.jpg');
+            "
+          ></div>
+          <div class="inner-frame">
+            <div class="text-cta__text">
+              <h2 class="title--h2 aos-init aos-animate" data-aos="fade-up">
+                Winwinit accompagna le Aziende verso il successo nell’era digitale
+              </h2>
+
+              <p class="text--md aos-init aos-animate" data-aos="fade-up">
+                Start your Digital Transformation
+              </p>
+
+              <div class="text-cta__cta aos-init aos-animate" data-aos="fade-up">
+                <a href="/contact/" class="btn-primary">Contatta i nostri esperti </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="testimonials">
+          <div class="testimonials__image">
+            <picture>
+              <source
+                media="(min-width: 1025px)"
+                type="image/webp"
+                srcset="
+                  https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-b4028f3ba6d0.webp
+                "
+              />
+              <source
+                media="(max-width: 1025px)"
+                type="image/webp"
+                srcset="
+                  https://www.winwinit.eu/wp-content/uploads/2021/04/transformation-experts-mob.webp
+                "
+              />
+              <source
+                media="(max-width: 1025px)"
+                type="image/jpg"
+                srcset="
+                  https://www.winwinit.eu/wp-content/uploads/2021/04/transformation-experts-mob.jpg
+                "
+              />
+              <img
+                class="lazy loaded"
+                alt="La soddisfazione dei Clienti è il </br> nostro miglior biglietto da visita"
+                data-ll-status="loaded"
+                src="https://www.winwinit.eu/wp-content/uploads/2021/05/testimonials.jpg"
+              />
+            </picture>
+          </div>
+          <div class="inner-frame">
+            <div class="testimonials__text">
+              <h2 class="title--h2">
+                La soddisfazione dei Clienti è il <br />
+                nostro miglior biglietto da visita
+              </h2>
+            </div>
+          </div>
+
+          <div
+            class="testimonials__wrap swiper-container js-ts-carousel swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events"
+          >
+            <div
+              class="swiper-wrapper"
+              id="swiper-wrapper-bebd3d18d74aff53"
+              aria-live="polite"
+              style="transition-duration: 0ms; transform: translate3d(-1316px, 0px, 0px)"
+            >
+              <div
+                class="testimonials__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                style="width: 648px; margin-right: 10px"
+                role="group"
+                aria-label="6 / 9"
+                data-swiper-slide-index="2"
+              >
+                <div class="-wrap">
+                  <p class="-quote text--md">Un Partner ideale</p>
+                  <p class="-quote-em text--sm">
+                    Lavorare con WinWinit ed il suo Team è sempre fonte di grande soddisfazione.
+                    Affidabilità e competenza li rendono un punto di riferimento.
+                  </p>
+
+                  <div class="-cite">
+                    <div class="-cite__text">
+                      <p class="-author">Marco</p>
+                      <p class="-position text--xs">Welfare Solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="testimonials__item swiper-slide swiper-slide-prev"
+                style="width: 648px; margin-right: 10px"
+                role="group"
+                aria-label="4 / 9"
+                data-swiper-slide-index="0"
+              >
+                <div class="-wrap">
+                  <p class="-quote text--md">Idee ed innovazione</p>
+                  <p class="-quote-em text--sm">
+                    Lavoriamo con Winwinit da anni e condividiamo con loro lo stesso entusiasmo per
+                    le idee non convenzionali nelle soluzioni di people engagement.
+                  </p>
+
+                  <div class="-cite">
+                    <div class="-cite__text">
+                      <p class="-author">Cecilia</p>
+                      <p class="-position text--xs">Nautes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="testimonials__item swiper-slide swiper-slide-active"
+                style="width: 648px; margin-right: 10px"
+                role="group"
+                aria-label="5 / 9"
+                data-swiper-slide-index="1"
+              >
+                <div class="-wrap">
+                  <p class="-quote text--md">Infinite sinergie</p>
+                  <p class="-quote-em text--sm">
+                    È incredibile come aziende operanti in ambiti così diversi riescano a trovare
+                    sempre infinite sinergie.
+                  </p>
+
+                  <div class="-cite">
+                    <div class="-cite__text">
+                      <p class="-author">Fabio</p>
+                      <p class="-position text--xs">Fabrick</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="testimonials__item swiper-slide swiper-slide-next"
+                style="width: 648px; margin-right: 10px"
+                role="group"
+                aria-label="6 / 9"
+                data-swiper-slide-index="2"
+              >
+                <div class="-wrap">
+                  <p class="-quote text--md">Un Partner ideale</p>
+                  <p class="-quote-em text--sm">
+                    Lavorare con WinWinit ed il suo Team è sempre fonte di grande soddisfazione.
+                    Affidabilità e competenza li rendono un punto di riferimento.
+                  </p>
+
+                  <div class="-cite">
+                    <div class="-cite__text">
+                      <p class="-author">Marco</p>
+                      <p class="-position text--xs">Welfare Solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="testimonials__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                style="width: 648px; margin-right: 10px"
+                role="group"
+                aria-label="4 / 9"
+                data-swiper-slide-index="0"
+              >
+                <div class="-wrap">
+                  <p class="-quote text--md">Idee ed innovazione</p>
+                  <p class="-quote-em text--sm">
+                    Lavoriamo con Winwinit da anni e condividiamo con loro lo stesso entusiasmo per
+                    le idee non convenzionali nelle soluzioni di people engagement.
+                  </p>
+
+                  <div class="-cite">
+                    <div class="-cite__text">
+                      <p class="-author">Cecilia</p>
+                      <p class="-position text--xs">Nautes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="testimonials__next swiper-button-next"
+              tabindex="0"
+              role="button"
+              aria-label="Next slide"
+              aria-controls="swiper-wrapper-bebd3d18d74aff53"
+            ></div>
+            <div
+              class="testimonials__prev swiper-button-prev"
+              tabindex="0"
+              role="button"
+              aria-label="Previous slide"
+              aria-controls="swiper-wrapper-bebd3d18d74aff53"
+            ></div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+              <span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 1"
+              ></span
+              ><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 2"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                tabindex="0"
+                role="button"
+                aria-label="Go to slide 3"
+              ></span>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+          </div>
+
+          <div class="inner-frame">
+            <div class="testimonials__cta">
+              <p class="text--md">Vuoi lavorare con noi?</p>
+              <a href="/contact/" class="btn-primary">Richiedi una consulenza gratuita </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="latest-posts">
+          <div class="inner-frame">
+            <h2 class="title--h2 aos-init aos-animate" data-aos="fade-in">
+              Ultimi trend del mondo digitale
+            </h2>
+            <div class="latest-posts__wrap aos-init aos-animate" data-aos="fade-in">
+              <article
+                id="post-919"
+                class="resources post-919 post type-post status-publish format-standard has-post-thumbnail hentry category-digital-transformation"
+              >
+                <div class="resources__social">
+                  <div class="addtoany_shortcode">
+                    <div
+                      class="a2a_kit a2a_kit_size_32 addtoany_list"
+                      data-a2a-url="https://www.winwinit.eu/5-motivi-per-cui-la-digital-transformation-potrebbe-apportare-dei-benefici-al-tuo-brand/"
+                      data-a2a-title="5 motivi per cui la Digital Transformation potrebbe apportare dei benefici al tuo Brand."
+                      style="line-height: 32px"
+                    >
+                      <a
+                        class="a2a_button_facebook"
+                        href="/#facebook"
+                        title="Facebook"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_facebook"
+                          style="background-color: rgb(24, 119, 242)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Facebook</span></a
+                      ><a
+                        class="a2a_button_twitter"
+                        href="/#twitter"
+                        title="Twitter"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_twitter"
+                          style="background-color: rgb(29, 155, 240)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Twitter</span></a
+                      ><a
+                        class="a2a_button_linkedin"
+                        href="/#linkedin"
+                        title="LinkedIn"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_linkedin"
+                          style="background-color: rgb(0, 123, 181)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z"
+                              fill="#FFF"
+                            ></path></svg></span
+                        ><span class="a2a_label">LinkedIn</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="resources__image">
+                  <a
+                    href="https://www.winwinit.eu/5-motivi-per-cui-la-digital-transformation-potrebbe-apportare-dei-benefici-al-tuo-brand/"
+                    class="resources__link"
+                  >
+                    <img
+                      width="900"
+                      height="550"
+                      src="https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1814154806.jpg"
+                      class="attachment-large size-large wp-post-image"
+                      alt="Digital transformation"
+                      decoding="async"
+                      loading="lazy"
+                      srcset="
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1814154806.jpg         900w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1814154806-300x183.jpg 300w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1814154806-768x469.jpg 768w
+                      "
+                      sizes="(max-width: 900px) 100vw, 900px"
+                    />
+                  </a>
+                </div>
+                <div class="resources__meta">
+                  <div class="-category">
+                    <a
+                      href="https://www.winwinit.eu/category/digital-transformation/"
+                      rel="category tag"
+                      >Digital Transformation</a
+                    >
+                  </div>
+                  <a
+                    href="https://www.winwinit.eu/5-motivi-per-cui-la-digital-transformation-potrebbe-apportare-dei-benefici-al-tuo-brand/"
+                  >
+                    <h3 class="text--md">
+                      5 motivi per cui la Digital Transformation potrebbe apportare dei benefici al
+                      tuo Brand.
+                    </h3>
+                  </a>
+                </div>
+              </article>
+              <article
+                id="post-916"
+                class="resources post-916 post type-post status-publish format-standard has-post-thumbnail hentry category-digital-transformation"
+              >
+                <div class="resources__social">
+                  <div class="addtoany_shortcode">
+                    <div
+                      class="a2a_kit a2a_kit_size_32 addtoany_list"
+                      data-a2a-url="https://www.winwinit.eu/perche-le-aziende-stanno-sperimentando-la-digital-transformation/"
+                      data-a2a-title="Perchè le Aziende stanno sperimentando la Digital Transformation?"
+                      style="line-height: 32px"
+                    >
+                      <a
+                        class="a2a_button_facebook"
+                        href="/#facebook"
+                        title="Facebook"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_facebook"
+                          style="background-color: rgb(24, 119, 242)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Facebook</span></a
+                      ><a
+                        class="a2a_button_twitter"
+                        href="/#twitter"
+                        title="Twitter"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_twitter"
+                          style="background-color: rgb(29, 155, 240)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Twitter</span></a
+                      ><a
+                        class="a2a_button_linkedin"
+                        href="/#linkedin"
+                        title="LinkedIn"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_linkedin"
+                          style="background-color: rgb(0, 123, 181)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z"
+                              fill="#FFF"
+                            ></path></svg></span
+                        ><span class="a2a_label">LinkedIn</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="resources__image">
+                  <a
+                    href="https://www.winwinit.eu/perche-le-aziende-stanno-sperimentando-la-digital-transformation/"
+                    class="resources__link"
+                  >
+                    <img
+                      width="900"
+                      height="550"
+                      src="https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1158779006.jpg"
+                      class="attachment-large size-large wp-post-image"
+                      alt="Live chat"
+                      decoding="async"
+                      loading="lazy"
+                      srcset="
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1158779006.jpg         900w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1158779006-300x183.jpg 300w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1158779006-768x469.jpg 768w
+                      "
+                      sizes="(max-width: 900px) 100vw, 900px"
+                    />
+                  </a>
+                </div>
+                <div class="resources__meta">
+                  <div class="-category">
+                    <a
+                      href="https://www.winwinit.eu/category/digital-transformation/"
+                      rel="category tag"
+                      >Digital Transformation</a
+                    >
+                  </div>
+                  <a
+                    href="https://www.winwinit.eu/perche-le-aziende-stanno-sperimentando-la-digital-transformation/"
+                  >
+                    <h3 class="text--md">
+                      Perchè le Aziende stanno sperimentando la Digital Transformation?
+                    </h3>
+                  </a>
+                </div>
+              </article>
+              <article
+                id="post-912"
+                class="resources post-912 post type-post status-publish format-standard has-post-thumbnail hentry category-digital-transformation"
+              >
+                <div class="resources__social">
+                  <div class="addtoany_shortcode">
+                    <div
+                      class="a2a_kit a2a_kit_size_32 addtoany_list"
+                      data-a2a-url="https://www.winwinit.eu/che-impatti-ha-la-digital-transformation-sulle-aziende/"
+                      data-a2a-title="Che impatti ha la Digital Transformation sulle Aziende?"
+                      style="line-height: 32px"
+                    >
+                      <a
+                        class="a2a_button_facebook"
+                        href="/#facebook"
+                        title="Facebook"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_facebook"
+                          style="background-color: rgb(24, 119, 242)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Facebook</span></a
+                      ><a
+                        class="a2a_button_twitter"
+                        href="/#twitter"
+                        title="Twitter"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_twitter"
+                          style="background-color: rgb(29, 155, 240)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Twitter</span></a
+                      ><a
+                        class="a2a_button_linkedin"
+                        href="/#linkedin"
+                        title="LinkedIn"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_linkedin"
+                          style="background-color: rgb(0, 123, 181)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z"
+                              fill="#FFF"
+                            ></path></svg></span
+                        ><span class="a2a_label">LinkedIn</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="resources__image">
+                  <a
+                    href="https://www.winwinit.eu/che-impatti-ha-la-digital-transformation-sulle-aziende/"
+                    class="resources__link"
+                  >
+                    <img
+                      width="900"
+                      height="550"
+                      src="https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1682847496.jpg"
+                      class="attachment-large size-large wp-post-image"
+                      alt="Virtual Reality"
+                      decoding="async"
+                      loading="lazy"
+                      srcset="
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1682847496.jpg         900w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1682847496-300x183.jpg 300w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/shutterstock_1682847496-768x469.jpg 768w
+                      "
+                      sizes="(max-width: 900px) 100vw, 900px"
+                    />
+                  </a>
+                </div>
+                <div class="resources__meta">
+                  <div class="-category">
+                    <a
+                      href="https://www.winwinit.eu/category/digital-transformation/"
+                      rel="category tag"
+                      >Digital Transformation</a
+                    >
+                  </div>
+                  <a
+                    href="https://www.winwinit.eu/che-impatti-ha-la-digital-transformation-sulle-aziende/"
+                  >
+                    <h3 class="text--md">
+                      Che impatti ha la Digital Transformation sulle Aziende?
+                    </h3>
+                  </a>
+                </div>
+              </article>
+              <article
+                id="post-908"
+                class="resources post-908 post type-post status-publish format-standard has-post-thumbnail hentry category-digital-transformation"
+              >
+                <div class="resources__social">
+                  <div class="addtoany_shortcode">
+                    <div
+                      class="a2a_kit a2a_kit_size_32 addtoany_list"
+                      data-a2a-url="https://www.winwinit.eu/i-principali-motivi-per-sperimentare-la-digital-transformation/"
+                      data-a2a-title="I principali motivi per sperimentare la Digital Transformation"
+                      style="line-height: 32px"
+                    >
+                      <a
+                        class="a2a_button_facebook"
+                        href="/#facebook"
+                        title="Facebook"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_facebook"
+                          style="background-color: rgb(24, 119, 242)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Facebook</span></a
+                      ><a
+                        class="a2a_button_twitter"
+                        href="/#twitter"
+                        title="Twitter"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_twitter"
+                          style="background-color: rgb(29, 155, 240)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              fill="#FFF"
+                              d="M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z"
+                            ></path></svg></span
+                        ><span class="a2a_label">Twitter</span></a
+                      ><a
+                        class="a2a_button_linkedin"
+                        href="/#linkedin"
+                        title="LinkedIn"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        ><span
+                          class="a2a_svg a2a_s__default a2a_s_linkedin"
+                          style="background-color: rgb(0, 123, 181)"
+                          ><svg
+                            focusable="false"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 32 32"
+                          >
+                            <path
+                              d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z"
+                              fill="#FFF"
+                            ></path></svg></span
+                        ><span class="a2a_label">LinkedIn</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="resources__image">
+                  <a
+                    href="https://www.winwinit.eu/i-principali-motivi-per-sperimentare-la-digital-transformation/"
+                    class="resources__link"
+                  >
+                    <img
+                      width="900"
+                      height="550"
+                      src="https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1201361011.jpg"
+                      class="attachment-large size-large wp-post-image"
+                      alt="Digital Butterfly"
+                      decoding="async"
+                      loading="lazy"
+                      srcset="
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1201361011.jpg         900w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1201361011-300x183.jpg 300w,
+                        https://www.winwinit.eu/wp-content/uploads/2021/06/GettyImages-1201361011-768x469.jpg 768w
+                      "
+                      sizes="(max-width: 900px) 100vw, 900px"
+                    />
+                  </a>
+                </div>
+                <div class="resources__meta">
+                  <div class="-category">
+                    <a
+                      href="https://www.winwinit.eu/category/digital-transformation/"
+                      rel="category tag"
+                      >Digital Transformation</a
+                    >
+                  </div>
+                  <a
+                    href="https://www.winwinit.eu/i-principali-motivi-per-sperimentare-la-digital-transformation/"
+                  >
+                    <h3 class="text--md">
+                      I principali motivi per sperimentare la Digital Transformation
+                    </h3>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="latest-posts__cta aos-init aos-animate" data-aos="fade-in">
+              <a href="/resources/" class="btn-primary">Scopri di più </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="site-footer"
+        role="contentinfo"
+        style="
+          background-image: url('https://www.winwinit.eu/wp-content/uploads/2021/05/MicrosoftTeams-image.jpg');
+        "
+      >
+        <div class="footer-top">
+          <div class="inner-frame">
+            <a href="https://www.winwinit.eu" class="logo-img--footer">
+              <img
+                class="lazy"
+                alt="WinWinIt"
+                src="https://www.winwinit.eu/wp-content/uploads/2021/04/logo_footer.svg"
+              />
+            </a>
+
+            <div class="-contact-form">
+              <div class="-contact-form__title">
+                Vuoi rimanere sempre aggiornato sulle nostre novità?
+              </div>
+
+              <div class="wpcf7 js" id="wpcf7-f5-o1" lang="en-US" dir="ltr">
+                <div class="screen-reader-response">
+                  <p role="status" aria-live="polite" aria-atomic="true"></p>
+                  <ul></ul>
+                </div>
+                <form
+                  action="/#wpcf7-f5-o1"
+                  method="post"
+                  class="wpcf7-form init"
+                  aria-label="Contact form"
+                  novalidate="novalidate"
+                  data-status="init"
+                >
+                  <div style="display: none">
+                    <input type="hidden" name="_wpcf7" value="5" />
+                    <input type="hidden" name="_wpcf7_version" value="5.8" />
+                    <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-o1" />
+                    <input type="hidden" name="_wpcf7_container_post" value="0" />
+                    <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                    <input
+                      type="hidden"
+                      name="_wpcf7_recaptcha_response"
+                      value="03ADUVZwA-vVdHKPyCG7Ta2ZFGd3g_NCxy4z-vmEJ51Q5vmk6SJfi63bC2ekaRybjDBLMfE4sLEUklN4yWRU5WhViFw2U0iFRRNSMQ_qIwQaAm1KcIhbjJBtjmZEA9V6lYRGzv1repiiAAhghi7gWo6COKBdoBN4lGl7zxiJX6R_9-zl9qjCcS68NjRCBmfrMqZQtiO9mYaEM8SlCpT5sliJVccpYzywdIlzpKZ9qx_D95Tg0aiBtZPyCokEhGGuav7Hxss7_WY0pEhmszbuJdU5JjJXPrM9qcjE5Pdo7SlP5MiRuwGyyVGj_KhEP4FWAi1k_xfyKJogXLwpv2qdQqriTjf42AOMMDf-zRX1fozQPNUHhZl5Gjwd_2wVD80pWP-54jC-RjrbQMKCtWPpoK15dlmBDW982SC_G2ROZljA6X5mBnk562PzZpGpdZu1p7gURLDt0qQqyQb546cYWMeHlWfRb7FzyavDl108x5sfNLRZoc_-ZhCRe6_2MBjp04z_xIg3Q0bQ2W2Z5nn_cMFb5nZC2MZ0V7gZW5zzZO2PotxI10PR-dJbk"
+                    />
+                  </div>
+                  <p>
+                    <label for="emailFieldSubscribe" class="subscription-form__email"
+                      ><br />
+                      <span class="wpcf7-form-control-wrap" data-name="your-email"
+                        ><input
+                          size="40"
+                          class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
+                          id="emailFieldSubscribe"
+                          aria-required="true"
+                          aria-invalid="false"
+                          placeholder="Your Email Address"
+                          value=""
+                          type="email"
+                          name="your-email"
+                          data-keeper-lock-id="k-wxaxksf7rm8" /><keeper-lock
+                          class="focus-visible keeper-lock-disabled"
+                          tabindex="0"
+                          id="k-wxaxksf7rm8"
+                          style="
+                            background-image: url('chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/ico-field-fill-lock-disabled.svg') !important;
+                            background-size: 24px 24px !important;
+                            cursor: pointer !important;
+                            width: 24px !important;
+                            position: absolute !important;
+                            opacity: 0 !important;
+                            margin-top: auto !important;
+                            min-width: 24px !important;
+                            top: 15.5px;
+                            left: 564.5px;
+                            z-index: 1;
+                            padding: 0px;
+                            height: 24px !important;
+                          "
+                          aria-label="Open Keeper Popup"
+                          role="button"
+                        ></keeper-lock></span
+                      ><br />
+                    </label>
+                  </p>
+                  <div class="subscription-form__submit">
+                    <p>
+                      <input
+                        class="wpcf7-form-control wpcf7-submit has-spinner"
+                        type="submit"
+                        value="Send"
+                      /><span class="wpcf7-spinner"></span>
+                    </p>
+                  </div>
+                  <div class="ds-lead-fields">
+                    <input name="source" value="" type="hidden" />
+                    <input name="utm_campaign" value="" type="hidden" />
+                    <input name="utm_source" value="" type="hidden" />
+                    <input name="utm_medium" value="" type="hidden" />
+                    <input name="utm_term" value="" type="hidden" />
+                  </div>
+                  <div class="ds-refer-fields">
+                    <input name="page" value="https://www.winwinit.eu/" type="hidden" />
+                    <input name="referrer" value="" type="hidden" />
+                  </div>
+                  <div class="wpcf7-response-output" aria-hidden="true"></div>
+                </form>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/company/winwinit-s.r.l"
+                rel="nofollow"
+                target="_blank"
+                class="social-links__item"
+              >
+                <img
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/Ln.png"
+                  alt="Social link"
+                />
+              </a>
+            </div>
+
+            <a
+              id="ast-scroll-top"
+              class="ast-scroll-top-icon ast-scroll-to-top-right"
+              data-on-devices="both"
+            >
+              <span class="text--xs">Back to Top</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="inner-frame">
+            <div class="-brand-logo">
+              <a href="/solutions/martech-hrtech/" target="">
+                <img
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/05/winloy-w.svg"
+                  alt="Winloy logo"
+                  class=""
+                />
+              </a>
+              <a href="/solutions/retailtech/" target="">
+                <img
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/05/winder-w.svg"
+                  alt="Winder logo"
+                  class=""
+                />
+              </a>
+              <a href="/solutions/tech-innovation/" target="">
+                <img
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/05/wintech-w.svg"
+                  alt="Wintech logo"
+                  class=""
+                />
+              </a>
+              <a href="/" target="">
+                <img
+                  src="https://www.winwinit.eu/wp-content/uploads/2021/05/winfarm-w.svg"
+                  alt="Winfarm logo"
+                  class=""
+                />
+              </a>
+            </div>
+
+            <div class="-copyright text--xs">©2023 WinWinIt s.r.l. – P.IVA 09301590965</div>
+
+            <div class="footer-links"></div>
+
+            <div class="made-by text--xs">
+              <p>
+                Web Design by
+                <a href="https://www.digitalsilk.com/" target="_blank" rel="nofollow noopener"
+                  >Digital Silk</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!--	wrapper-->
+
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/plugins/ds-contact-form-cfdb7/js/dscf7db.min.js?ver=1.4.3"
+      id="dscf7db-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8"
+      id="swv-js"
+    ></script>
+    <script type="text/javascript" id="contact-form-7-js-extra">
+      /* <![CDATA[ */
+      var wpcf7 = {
+        api: { root: "https:\/\/www.winwinit.eu\/wp-json\/", namespace: "contact-form-7\/v1" },
+      };
+      /* ]]> */
+    </script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8"
+      id="contact-form-7-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.google.com/recaptcha/api.js?render=6LeABtoaAAAAAPjUCwBYQqQt3FnUnxrNuCZQw-EI&amp;ver=3.0"
+      id="google-recaptcha-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2"
+      id="wp-polyfill-inert-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11"
+      id="regenerator-runtime-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
+      id="wp-polyfill-js"
+    ></script>
+    <script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+      /* <![CDATA[ */
+      var wpcf7_recaptcha = {
+        sitekey: "6LeABtoaAAAAAPjUCwBYQqQt3FnUnxrNuCZQw-EI",
+        actions: { homepage: "homepage", contactform: "contactform" },
+      };
+      /* ]]> */
+    </script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.8"
+      id="wpcf7-recaptcha-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/aos/aos.js?ver=1"
+      id="aos-js-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/swiper/swiper-bundle.min.js?ver=1"
+      id="swiper-js-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/tabs/a11y-accordion-tabs.min.js?ver=1"
+      id="js-tabs-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/lazyload/lazyload.min.js?ver=1"
+      id="js-lazyload-js"
+    ></script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/vendors/particles.min.js?ver=1"
+      id="particles-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2"
+      id="jquery-ui-core-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.winwinit.eu/wp-includes/js/jquery/ui/accordion.min.js?ver=1.13.2"
+      id="jquery-ui-accordion-js"
+    ></script>
+    <script type="text/javascript" id="main-js-js-extra">
+      /* <![CDATA[ */
+      var ajaxData = { url: "https:\/\/www.winwinit.eu\/wp-admin\/admin-ajax.php" };
+      /* ]]> */
+    </script>
+    <script
+      type="text/javascript"
+      defer=""
+      src="https://www.winwinit.eu/wp-content/themes/digitalsilk/assets/_dist/js/main.js?ver=1"
+      id="main-js-js"
+    ></script>
+
+    <div style="position: static">
+      <div class="a2a_overlay" id="a2a_overlay"></div>
+      <div id="a2a_modal" class="a2a_modal a2a_hide" role="dialog" tabindex="-1" aria-label="">
+        <div class="a2a_modal_body a2a_menu a2a_hide" id="a2a_copy_link">
+          <span id="a2a_copy_link_icon" class="a2a_svg a2a_s_link a2a_logo_color"
+            ><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path
+                fill="#FFF"
+                d="M24.4 21.18c0-.36-.1-.67-.36-.92l-2.8-2.8a1.24 1.24 0 0 0-.92-.38c-.38 0-.7.14-.97.43.02.04.1.12.25.26l.3.3.2.24c.08.12.14.24.17.35.03.1.05.23.05.37 0 .36-.13.66-.38.92a1.25 1.25 0 0 1-.92.37 1.4 1.4 0 0 1-.37-.03 1.06 1.06 0 0 1-.35-.18 2.27 2.27 0 0 1-.25-.2 6.82 6.82 0 0 1-.3-.3l-.24-.25c-.3.28-.44.6-.44.98 0 .36.13.66.38.92l2.78 2.8c.24.23.54.35.9.35.37 0 .68-.12.93-.35l1.98-1.97c.26-.25.38-.55.38-.9zm-9.46-9.5c0-.37-.13-.67-.38-.92l-2.78-2.8a1.24 1.24 0 0 0-.9-.37c-.36 0-.67.1-.93.35L7.97 9.92c-.26.25-.38.55-.38.9 0 .36.1.67.37.92l2.8 2.8c.24.25.55.37.92.37.36 0 .7-.13.96-.4-.03-.04-.1-.12-.26-.26s-.24-.23-.3-.3a2.67 2.67 0 0 1-.2-.24 1.05 1.05 0 0 1-.17-.35 1.4 1.4 0 0 1-.04-.37c0-.36.1-.66.36-.9.26-.26.56-.4.92-.4.14 0 .26.03.37.06.12.03.23.1.35.17.1.1.2.16.25.2l.3.3.24.26c.3-.28.44-.6.44-.98zM27 21.17c0 1.07-.38 2-1.15 2.73l-1.98 1.98c-.74.75-1.66 1.12-2.73 1.12-1.1 0-2-.38-2.75-1.14l-2.8-2.8c-.74-.74-1.1-1.65-1.1-2.73 0-1.1.38-2.04 1.17-2.82l-1.18-1.17c-.8.8-1.72 1.18-2.82 1.18-1.08 0-2-.36-2.75-1.12l-2.8-2.8C5.38 12.8 5 11.9 5 10.82c0-1.08.38-2 1.15-2.74L8.13 6.1C8.87 5.37 9.78 5 10.86 5c1.1 0 2 .38 2.75 1.15l2.8 2.8c.74.73 1.1 1.65 1.1 2.72 0 1.1-.38 2.05-1.17 2.82l1.18 1.18c.8-.8 1.72-1.2 2.82-1.2 1.08 0 2 .4 2.75 1.14l2.8 2.8c.76.76 1.13 1.68 1.13 2.76z"
+              ></path></svg></span
+          ><input id="a2a_copy_link_text" type="text" title="Copy link" readonly="" />
+          <div id="a2a_copy_link_copied">✓</div>
+        </div>
+        <div class="a2a_modal_body a2a_menu a2a_thanks a2a_hide" id="a2a_thanks">
+          <div class="a2a_localize" data-a2a-localize="inner,ThanksForSharing">
+            Thanks for sharing!
+          </div>
+        </div>
+      </div>
+      <div
+        class="a2a_menu a2a_full a2a_localize"
+        id="a2apage_full"
+        role="dialog"
+        tabindex="-1"
+        aria-label="Share"
+        data-a2a-localize="title,Share"
+      >
+        <div class="a2a_full_header">
+          <div id="a2apage_find_container" class="a2a_menu_find_container">
+            <input
+              id="a2apage_find"
+              class="a2a_menu_find a2a_localize"
+              type="text"
+              autocomplete="off"
+              title="Find any service"
+              data-a2a-localize="title,FindAnyServiceToAddTo"
+            /><span id="a2apage_find_icon" class="a2a_svg a2a_s_find"
+              ><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  fill="#CCC"
+                  d="M19.7 18.2l-4.5-4.5c.7-1.1 1.2-2.3 1.2-3.6 0-3.5-2.8-6.3-6.3-6.3s-6.3 2.8-6.3 6.3 2.8 6.3 6.3 6.3c1.4 0 2.6-.4 3.6-1.2l4.5 4.5c.6.6 1.3.7 1.7.2.5-.4.4-1.1-.2-1.7zm-9.6-3.6c-2.5 0-4.5-2.1-4.5-4.5 0-2.5 2.1-4.5 4.5-4.5 2.5 0 4.5 2.1 4.5 4.5s-2 4.5-4.5 4.5z"
+                ></path></svg
+            ></span>
+          </div>
+        </div>
+        <div class="a2a_full_services" id="a2apage_full_services" role="presentation"></div>
+        <div class="a2a_full_footer">
+          <a href="https://www.addtoany.com" title="Share Buttons" rel="noopener" target="_blank"
+            ><span class="a2a_svg a2a_s__default a2a_s_a2a a2a_logo_color"
+              ><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <g fill="#FFF">
+                  <path d="M14 7h4v18h-4z"></path>
+                  <path d="M7 14h18v4H7z"></path>
+                </g></svg></span
+            >AddToAny</a
+          >
+        </div>
+      </div>
+      <div
+        id="a2apage_dropdown"
+        class="a2a_menu a2a_mini a2a_localize a2a_hide"
+        tabindex="-1"
+        aria-label="Share"
+        data-a2a-localize="label,Share"
+      >
+        <div class="a2a_mini_services" id="a2apage_mini_services"></div>
+        <div id="a2apage_cols_container" class="a2a_cols_container">
+          <div class="a2a_col1" id="a2apage_col1"></div>
+          <div id="a2apage_2_col1" class="a2a_hide"></div>
+          <div class="a2a_clear"></div>
+        </div>
+        <div class="a2apage_wide a2a_wide">
+          <a
+            href="#addtoany"
+            id="a2apage_show_more_less"
+            class="a2a_more a2a_localize"
+            title="Show all"
+            data-a2a-localize="title,ShowAll"
+            ><span class="a2a_svg a2a_s__default a2a_s_a2a a2a_logo_color"
+              ><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <g fill="#FFF">
+                  <path d="M14 7h4v18h-4z"></path>
+                  <path d="M7 14h18v4H7z"></path>
+                </g></svg></span
+            ><span class="a2a_localize" data-a2a-localize="inner,More">More…</span></a
+          >
+        </div>
+      </div>
+      <div
+        style="
+          height: 1px;
+          width: 1px;
+          position: absolute;
+          z-index: 100000;
+          top: 0px;
+          visibility: hidden;
+        "
+      >
+        <iframe
+          id="a2a_sm_ifr"
+          title="AddToAny Utility Frame"
+          transparency="true"
+          allowtransparency="true"
+          frameborder="0"
+          src="https://static.addtoany.com/menu/sm.24.html#type=core&amp;event=load"
+          style="
+            height: 1px;
+            width: 1px;
+            border: 0px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            z-index: 100000;
+            display: none;
+          "
+        ></iframe>
+      </div>
+    </div>
+    <div>
+      <div
+        class="grecaptcha-badge"
+        data-style="bottomright"
+        style="
+          width: 256px;
+          height: 60px;
+          display: block;
+          transition: right 0.3s ease 0s;
+          position: fixed;
+          bottom: 14px;
+          right: -186px;
+          box-shadow: gray 0px 0px 5px;
+          border-radius: 2px;
+          overflow: hidden;
+        "
+      >
+        <div class="grecaptcha-logo">
+          <iframe
+            title="reCAPTCHA"
+            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeABtoaAAAAAPjUCwBYQqQt3FnUnxrNuCZQw-EI&amp;co=aHR0cHM6Ly93d3cud2lud2luaXQuZXU6NDQz&amp;hl=en&amp;v=x19joXI_IeQnFJ7YnfDapSZq&amp;size=invisible&amp;cb=pj4d3y31kkek"
+            width="256"
+            height="60"
+            role="presentation"
+            name="a-6zncg5xq2nqs"
+            frameborder="0"
+            scrolling="no"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
+          ></iframe>
+        </div>
+        <div class="grecaptcha-error"></div>
+        <textarea
+          id="g-recaptcha-response-100000"
+          name="g-recaptcha-response"
+          class="g-recaptcha-response"
+          style="
+            width: 250px;
+            height: 40px;
+            border: 1px solid rgb(193, 193, 193);
+            margin: 10px 25px;
+            padding: 0px;
+            resize: none;
+            display: none;
+          "
+          data-gramm="false"
+          wt-ignore-input="true"
+        ></textarea>
+      </div>
+      <iframe style="display: none"></iframe>
+    </div>
+    <style>
+      input[data-keeper-lock-id="k-wxaxksf7rm8"]:hover ~ keeper-lock#k-wxaxksf7rm8 {
+        opacity: 1;
+      }
+    </style>
+  </body>
+  <quillbot-extension-portal></quillbot-extension-portal
+  ><quillbot-extension-root></quillbot-extension-root>
+</html>
