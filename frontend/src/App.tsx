@@ -1,22 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+//CSS
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+//Components
+import Header from "./Components/Header";
+import Hero from "./Components/Hero";
 
+function App() {
   return (
     <>
-      <body
-        className="home page-template page-template-templates page-template-template-flexible page-template-templatestemplate-flexible-php page page-id-12 theme-blue"
-        data-aos-easing="ease-out"
-        data-aos-duration="600"
-        data-aos-delay="0"
-      >
+      <body className="home page-template page-template-templates page-template-template-flexible page-template-templatestemplate-flexible-php page page-id-12 theme-blue">
         <div className="wrapper">
-          <main className="site-content" role="main"></main>
-          <p>hello</p>
+          <Header />
+          <main className="site-content" role="main">
+            <Hero />
+          </main>
         </div>
       </body>
     </>

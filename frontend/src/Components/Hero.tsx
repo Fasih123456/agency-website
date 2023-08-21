@@ -30,7 +30,7 @@ function Hero() {
           <div className="net-graph" id="particles-js">
             <canvas
               className="particles-js-canvas-el"
-              style="width: 100%; height: 100%;"
+              style={{ width: "100%", height: "100%" }}
               width="1376"
               height="1124"
             ></canvas>
@@ -55,3 +55,5 @@ function Hero() {
     </>
   );
 }
+
+export default Hero;

@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-      <header className="site-header aos-init aos-animate" role="banner" data-aos="fade-down">
+      <header className="site-header" role="banner">
         <div className="site-header__logo">
           <div className="inner-frame">
             <a href="https://www.winwinit.eu" className="-link">
