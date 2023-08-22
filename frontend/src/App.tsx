@@ -1,5 +1,5 @@
 //CSS
-import "./App.css";
+import "./assets/App.css";
 
 //React Imports
 import { BrowserRouter, Routes, Route } from "react-router-dom";

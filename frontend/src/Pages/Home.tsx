@@ -10,8 +10,9 @@ import Header from "../Components/Header";
 function Home() {
   return (
     <>
-      <Hero />
-      <Services />
+      <main className="site-content" role="main">
+        <Hero />
+      </main>
     </>
   );
 }

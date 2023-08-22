@@ -2,7 +2,7 @@ function ServicesHome() {
   return (
     <>
       <section className="accordion net-bg">
-        <div className="inner-frame aos-init aos-animate" data-aos="fade-up">
+        <div className="inner-frame ">
           <h2 className="title--h2">
             <p>Una panoramica sulle nostre</p>
             <p>
@@ -10,11 +10,7 @@ function ServicesHome() {
             </p>
           </h2>
         </div>
-        <div
-          className="accordion-tabs js-tabs is-initialized tabs-allowed aos-init aos-animate"
-          id="js-tabs-accordion"
-          data-aos="fade-in"
-        >
+        <div className="accordion-tabs js-tabs is-initialized tabs-allowed " id="js-tabs-accordion">
           <div className="accordion-tabs__nav">
             <div className="inner-frame">
               <ul role="tablist" className="tabs-list">
