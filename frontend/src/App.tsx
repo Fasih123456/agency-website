@@ -18,8 +18,7 @@ function App() {
   return (
     <>
       <body className="home page-template page-template-templates page-template-template-flexible page-template-templatestemplate-flexible-php page page-id-12 theme-blue">
-        <div className="wrapper">
-          <Header />
+        <div className="wrapper" style={{ width: "100%" }}>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />} />

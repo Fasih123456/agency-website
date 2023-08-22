@@ -10,8 +10,28 @@ import Header from "../Components/Header";
 function Home() {
   return (
     <>
-      <main className="site-content" role="main">
+      <div
+        style={{
+          backgroundColor: "red",
+          width: "100%",
+          height: "100% !important",
+          zIndex: "10000 !important",
+          marginTop: "750px",
+        }}
+      >
+        <Header />
+      </div>
+      <main
+        className="site-content"
+        role="main"
+        style={{
+          width: "100% !important",
+          paddingRight: "0px !important",
+          marginRight: "0px !important",
+        }}
+      >
         <Hero />
+        <Services />
       </main>
     </>
   );
