@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-      <header className="site-header" role="banner">
+      <header className="site-header is-sticky" role="banner">
         <div className="site-header__logo">
           <div className="inner-frame">
             <a href="https://www.winwinit.eu" className="-link">
