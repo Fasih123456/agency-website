@@ -7,17 +7,17 @@ function Hero() {
             <source
               media="(min-width: 1025px)"
               type="image/webp"
-              srcset="https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-de3fd228e551.webp"
+              srcSet="https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-de3fd228e551.webp"
             />
             <source
               media="(max-width: 1025px)"
               type="image/webp"
-              srcset="https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-c3242cdb109d.webp"
+              srcSet="https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-c3242cdb109d.webp"
             />
             <source
               media="(max-width: 1025px)"
               type="image/jpg"
-              srcset="https://www.winwinit.eu/wp-content/uploads/2021/05/Hero-Home-Mob.jpg"
+              srcSet="https://www.winwinit.eu/wp-content/uploads/2021/05/Hero-Home-Mob.jpg"
             />
             <img
               className="lazy loaded"

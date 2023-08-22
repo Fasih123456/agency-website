@@ -1,4 +1,4 @@
-function Services() {
+function ServicesHome() {
   <>
     <section className="accordion net-bg">
       <div className="inner-frame aos-init aos-animate" data-aos="fade-up">
@@ -43,7 +43,7 @@ function Services() {
                   aria-controls="section2"
                   className="tabs-list__link tabs-trigger js-tabs-trigger"
                   aria-selected="false"
-                  tabindex="-1"
+                  tabIndex={-1}
                 >
                   <img
                     alt="Internet of Things"
@@ -62,7 +62,7 @@ function Services() {
                   aria-controls="section3"
                   className="tabs-list__link tabs-trigger js-tabs-trigger"
                   aria-selected="false"
-                  tabindex="-1"
+                  tabIndex={-1}
                 >
                   <img
                     alt="RetailTech"
@@ -81,7 +81,7 @@ function Services() {
                   aria-controls="section4"
                   className="tabs-list__link tabs-trigger js-tabs-trigger"
                   aria-selected="false"
-                  tabindex="-1"
+                  tabIndex={-1}
                 >
                   <img
                     alt=" FinTech &amp; LegalTech"
@@ -106,7 +106,7 @@ function Services() {
               className="accordion-trigger js-accordion-trigger"
               aria-controls="section4"
               aria-expanded="true"
-              tabindex="0"
+              tabIndex={0}
             >
               <img
                 alt="MarTech &amp; HrTech"
@@ -155,13 +155,13 @@ function Services() {
             role="tabpanel"
             aria-labelledby="tab4"
             className="tabs-panel js-tabs-panel is-hidden"
-            tabindex="-1"
+            tabIndex={-1}
           >
             <div
               className="accordion-trigger js-accordion-trigger"
               aria-controls="section4"
               aria-expanded="false"
-              tabindex="0"
+              tabIndex={0}
             >
               <img
                 data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-1.svg"
@@ -212,13 +212,13 @@ function Services() {
             role="tabpanel"
             aria-labelledby="tab4"
             className="tabs-panel js-tabs-panel is-hidden"
-            tabindex="-1"
+            tabIndex={-1}
           >
             <div
               className="accordion-trigger js-accordion-trigger"
               aria-controls="section4"
               aria-expanded="false"
-              tabindex="0"
+              tabIndex={0}
             >
               <img
                 data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-23.png"
@@ -264,13 +264,13 @@ function Services() {
             role="tabpanel"
             aria-labelledby="tab4"
             className="tabs-panel js-tabs-panel is-hidden"
-            tabindex="-1"
+            tabIndex={-1}
           >
             <div
               className="accordion-trigger js-accordion-trigger"
               aria-controls="section4"
               aria-expanded="false"
-              tabindex="0"
+              tabIndex={0}
             >
               <img
                 data-src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-6.svg"
@@ -317,4 +317,4 @@ function Services() {
   </>;
 }
 
-export default Services;
+export default ServicesHome;
