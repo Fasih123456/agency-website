@@ -1,4 +1,4 @@
-import SocialMediaIcons from "./Home/SocialMediaIcons";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 function Footer() {
   return (

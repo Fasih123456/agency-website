@@ -78,3 +78,23 @@ button:focus-visible {
   right: 2vw !important;
   bottom: 5vh !important;
 }
+
+h1 {
+  color: #00008b !important;
+}
+
+h2 {
+  color: #00008b !important;
+}
+
+h3 {
+  color: #00008b !important;
+}
+
+h4 {
+  color: white !important;
+}
+
+p {
+  color: #131915 !important;
+}
