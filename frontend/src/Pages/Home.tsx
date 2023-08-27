@@ -3,6 +3,7 @@ import Hero from "../Components/Home/HeroHome";
 import Services from "../Components/Home/ServicesHome";
 import Header from "../Components/Header";
 import HowWeWork from "../Components/Home/HowWeWork";
+import ClientHome from "../Components/Home/ClientsHome";
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function Home() {
         <Hero />
         <Services />
         <HowWeWork />
+        <ClientHome />
       </main>
     </>
   );
