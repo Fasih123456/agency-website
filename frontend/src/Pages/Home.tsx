@@ -5,23 +5,26 @@ import Header from "../Components/Header";
 import HowWeWork from "../Components/Home/HowWeWork";
 import ClientHome from "../Components/Home/ClientsHome";
 import ContactUs from "../Components/Home/ContactUsHome";
+import Reviews from "../Components/Home/Reviews";
+import Footer from "../Components/Footer";
 
 function Home() {
   return (
     <>
       <div
         style={{
-          marginTop: "2545px",
+          marginTop: "3920px",
         }}
-      >
-        <Header />
-      </div>
+      ></div>
       <main className="site-content" role="main">
+        <Header />
         <Hero />
         <Services />
         <HowWeWork />
         <ClientHome />
         <ContactUs />
+        <Reviews />
+        <Footer />
       </main>
     </>
   );

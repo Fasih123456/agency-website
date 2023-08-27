@@ -4,7 +4,10 @@ function Footer() {
       <footer
         className="site-footer"
         role="contentinfo"
-        style="background-image: url('https://www.winwinit.eu/wp-content/uploads/2021/05/MicrosoftTeams-image.jpg')"
+        style={{
+          backgroundImage:
+            "url('https://www.winwinit.eu/wp-content/uploads/2021/05/MicrosoftTeams-image.jpg')",
+        }}
       >
         <div className="footer-top">
           <div className="inner-frame">
@@ -30,10 +33,9 @@ function Footer() {
                   method="post"
                   className="wpcf7-form init"
                   aria-label="Contact form"
-                  novalidate="novalidate"
-                  data-status="init"
+                  noValidate={true}
                 >
-                  <div style="display: none;">
+                  <div style={{ display: "none" }}>
                     <input type="hidden" name="_wpcf7" value="5" />
                     <input type="hidden" name="_wpcf7_version" value="5.8" />
                     <input type="hidden" name="_wpcf7_locale" value="en_US" />
@@ -47,11 +49,11 @@ function Footer() {
                     />
                   </div>
                   <p>
-                    <label for="emailFieldSubscribe" className="subscription-form__email">
+                    <label htmlFor="emailFieldSubscribe" className="subscription-form__email">
                       <br />
                       <span className="wpcf7-form-control-wrap" data-name="your-email">
                         <input
-                          size="40"
+                          size={40}
                           className="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
                           id="emailFieldSubscribe"
                           aria-required="true"
@@ -62,14 +64,6 @@ function Footer() {
                           name="your-email"
                           data-keeper-lock-id="k-cdstq52vcfb"
                         />
-                        <keeper-lock
-                          className="focus-visible keeper-lock-disabled"
-                          tabindex="0"
-                          id="k-cdstq52vcfb"
-                          style='background-image: url("chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/ico-field-fill-lock-disabled.svg") !important; background-size: 24px 24px !important; cursor: pointer !important; width: 24px !important; position: absolute !important; opacity: 0 !important; margin-top: auto !important; min-width: 24px !important; top: 15.5px; left: 564.5px; z-index: 1; padding: 0px; height: 24px !important;'
-                          aria-label="Open Keeper Popup"
-                          role="button"
-                        ></keeper-lock>
                       </span>
                       <br />
                     </label>
@@ -179,3 +173,5 @@ function Footer() {
     </>
   );
 }
+
+export default Footer;

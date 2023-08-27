@@ -17,11 +17,11 @@ function Header() {
         <div className="site-header__links">
           <div className="-mb-phone inner-frame">
             <div className="-dropdown__header-top">
-              <a href="tel:390287036386" className="-dropdown__header-phone">
-                +39 02 87036386{" "}
+              <a href="tel:+14168235930" className="-dropdown__header-phone">
+                +1 416 823 5930
               </a>{" "}
               <a href="/contact/" className="-dropdown__header-cta btn-primary">
-                Consulenza gratuita{" "}
+                Contact Us
               </a>{" "}
             </div>
           </div>
