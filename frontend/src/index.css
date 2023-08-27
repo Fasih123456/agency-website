@@ -67,3 +67,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.fab-item {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+}
+
+.fab-container {
+  right: 2vw !important;
+  bottom: 5vh !important;
+}

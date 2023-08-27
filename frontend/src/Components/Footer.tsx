@@ -1,3 +1,5 @@
+import SocialMediaIcons from "./Home/SocialMediaIcons";
+
 function Footer() {
   return (
     <>
@@ -99,17 +101,7 @@ function Footer() {
             </div>
 
             <div className="social-links">
-              <a
-                href="https://www.linkedin.com/company/winwinit-s.r.l"
-                rel="nofollow"
-                target="_blank"
-                className="social-links__item"
-              >
-                <img
-                  src="https://www.winwinit.eu/wp-content/uploads/2021/04/Ln.png"
-                  alt="Social link"
-                />
-              </a>
+              <SocialMediaIcons />
             </div>
 
             <a

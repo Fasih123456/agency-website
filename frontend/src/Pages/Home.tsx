@@ -7,6 +7,7 @@ import ClientHome from "../Components/Home/ClientsHome";
 import ContactUs from "../Components/Home/ContactUsHome";
 import Reviews from "../Components/Home/Reviews";
 import Footer from "../Components/Footer";
+import SocialMediaIcons from "../Components/Home/SocialMediaIcons";
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function Home() {
         <Reviews />
         <Footer />
       </main>
+      <SocialMediaIcons />
     </>
   );
 }
