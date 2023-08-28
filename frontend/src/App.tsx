@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //Components
 import Home from "./Pages/Home";
-import Contact from "./Pages/contact";
+import Contact from "./Pages/Contact";
 import Careers from "./Pages/Careers";
 import Services from "./Pages/Services";
 import CaseStudy from "./Pages/CaseStudy";

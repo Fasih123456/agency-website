@@ -9,14 +9,12 @@ import Reviews from "../Components/Home/Reviews";
 import Footer from "../Components/Footer";
 import SocialMediaIcons from "../Components/SocialMediaIcons";
 
+import { useState } from "react";
+import { Button, Offcanvas } from "react-bootstrap";
+
 function Home() {
   return (
     <>
-      <div
-        style={{
-          marginTop: "3920px",
-        }}
-      ></div>
       <main className="site-content" role="main">
         <Header />
         <Hero />
