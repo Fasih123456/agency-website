@@ -71,3 +71,23 @@ p {
     right: 44px !important;
   }
 }
+
+.main-brand-color {
+  background-color: #00006b;
+}
+
+.light-shades {
+  background-color: #f5f7f7;
+}
+
+.light-accent {
+  background-color: #cc787f;
+}
+
+.dark-accent {
+  background-color: #ae4068;
+}
+
+.dark-shades {
+  background-color: #131915;
+}

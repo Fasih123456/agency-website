@@ -1,7 +1,7 @@
 function ServicesHome() {
   return (
     <>
-      <section className="accordion net-bg">
+      <section className="accordion net-bg ">
         <div className="inner-frame ">
           <h2 className="title--h2">
             <p>Una panoramica sulle nostre</p>

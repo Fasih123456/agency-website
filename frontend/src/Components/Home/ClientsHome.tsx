@@ -1,7 +1,7 @@
 function ClientHome() {
   return (
     <>
-      <section className="partners">
+      <section className="partners" style={{ backgroundColor: "#F5F7F7" }}>
         <div className="inner-frame">
           <h4 className="title--h4 aos-init ">I nostri Partners:</h4>
           <div className="partners__wrap">

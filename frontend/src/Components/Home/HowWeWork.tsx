@@ -4,7 +4,7 @@ function HowWeWork() {
       <section
         className="support left"
         style={{
-          backgroundImage: "url(https://www.winwinit.eu/wp-content/uploads/2021/05/Consulting.jpg)",
+          backgroundColor: "#AE4D68",
         }}
       >
         <div className="inner-frame">
