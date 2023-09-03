@@ -1,42 +1,38 @@
 import "../index.css";
-import OffCanvasMenu from "./OffCanvasMenu";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 function Header() {
   return (
-    <>
-      <header className="site-header is-sticky" role="banner">
-        <div className="site-header__logo">
-          <div className="inner-frame">
-            <a href="https://www.winwinit.eu" className="-link">
-              <img
-                src="https://www.winwinit.eu/wp-content/uploads/2021/04/logo_blue_color.svg"
-                alt="WinWinIt"
-                className="logo-img"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className="site-header__links">
-          <div className="-mb-phone inner-frame">
-            <div className="-dropdown__header-top">
-              <a href="tel:+14168235930" className="-dropdown__header-phone">
-                +1 416 823 5930
-              </a>{" "}
-              <a href="/contact/" className="-dropdown__header-cta btn-primary">
-                Contact Us
-              </a>{" "}
-            </div>
-          </div>
-
-          <div className="-burger-block inner-frame">
-            <div className="-burger-icon js-mobile-toggle" aria-expanded="false">
-              <OffCanvasMenu />
-            </div>
-          </div>
-        </div>
-      </header>
-    </>
+    <Navbar collapseOnSelect expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Dank memes
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

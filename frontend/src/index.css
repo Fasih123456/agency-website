@@ -91,3 +91,25 @@ p {
 .dark-shades {
   background-color: #131915;
 }
+
+.navbar {
+  background-color: black;
+  color: white;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.navbar a {
+  color: inherit;
+  transition: color 0.5s ease-in-out;
+}
+
+.navbar:hover {
+  background-color: white;
+  transition: background-color 0.5s ease-in-out;
+  color: black;
+}
+
+.navbar:hover a {
+  color: black;
+  transition: color 0.5s ease-in-out;
+}
