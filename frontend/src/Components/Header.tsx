@@ -1,7 +1,5 @@
 import "../index.css";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -13,22 +11,32 @@ function Header() {
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          <Nav className="justify-content-center">
+            <NavDropdown title="Work" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#service1">Cases</NavDropdown.Item>
+              <NavDropdown.Item href="#service2">Portfolio</NavDropdown.Item>
             </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            <NavDropdown title="Industries" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#service1">Saas</NavDropdown.Item>
+              <NavDropdown.Item href="#service2">eCommerce</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">PR & Outreach</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">Startup</NavDropdown.Item>
+              <NavDropdown.Item href="#service2">Small Business</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">Esports</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">Mobile</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Services" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#service1">Social Media</NavDropdown.Item>
+              <NavDropdown.Item href="#service2">SEO</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">PR & Outreach</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">Video Production</NavDropdown.Item>
+              <NavDropdown.Item href="#service3">Video Marketing</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Company" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#service1">Why Us</NavDropdown.Item>
+              <NavDropdown.Item href="#service2">About</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#about">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

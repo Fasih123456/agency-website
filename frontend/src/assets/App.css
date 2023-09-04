@@ -9138,26 +9138,8 @@ svg {
   }
 }
 .text-cta__text:before {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(0, var(--theme-color)),
-    color-stop(31%, var(--theme-color)),
-    color-stop(31%, transparent),
-    color-stop(72%, transparent),
-    color-stop(72%, var(--theme-color)),
-    to(var(--theme-color))
-  );
-  background-image: linear-gradient(
-    to right,
-    var(--theme-color) 0,
-    var(--theme-color) 31%,
-    transparent 31%,
-    transparent 72%,
-    var(--theme-color) 72%,
-    var(--theme-color) 100%
-  );
+
+
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100% 12px;
@@ -9175,37 +9157,9 @@ svg {
   width: 84%;
   z-index: 12;
 }
-@media (max-width: 1024px) {
-  .text-cta__text:before {
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(0, var(--theme-color)),
-      color-stop(15%, var(--theme-color)),
-      color-stop(15%, transparent),
-      color-stop(86%, transparent),
-      color-stop(86%, var(--theme-color)),
-      to(var(--theme-color))
-    );
-    background-image: linear-gradient(
-      to right,
-      var(--theme-color) 0,
-      var(--theme-color) 15%,
-      transparent 15%,
-      transparent 86%,
-      var(--theme-color) 86%,
-      var(--theme-color) 100%
-    );
-    height: 55%;
-    left: -1%;
-    top: 8%;
-    width: 101%;
-    z-index: 12;
-  }
-}
+
 .text-cta__text:after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 700 700' xml:space='preserve'%3E%3Cpath fill='white' stroke='white' d='M699.8,0L496.8,686.9l-189.5-170l-142.1,127l-38.1-127.1l180.2-160.6L431,467.2L559.3,29.7C564.5,12.2,580.8,0,599.4,0H699.8z'/%3E%3Cpath fill='white' stroke='white' d='M112.5,27.5l69.9,233.7L306,150.3l126.7,112.6c11.9,10.6,16.7,26.9,12.2,42.1l-30.1,102.8L306.1,311L116.5,481L0,93.5l82.7-74.2C92.7,10.3,108.7,14.8,112.5,27.5z'/%3E%3C/svg%3E");
+  
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 60%;
@@ -9223,18 +9177,7 @@ svg {
   }
 }
 .text-cta__cta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  z-index: 20;
+
 }
 @media (max-width: 1024px) {
   .text-cta__cta {

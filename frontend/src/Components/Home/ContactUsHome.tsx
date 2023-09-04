@@ -1,10 +1,9 @@
 function ContactUs() {
   return (
     <>
-      <section className="text-cta net-bg">
-        <div className="text-cta__image" style={{}}></div>
-        <div className="inner-frame">
-          <div className="text-cta__text">
+      <section className="text-cta">
+        <div className=".inner-frame-contact ">
+          <div className="contact-us-div">
             <h2 className="title--h2 ">
               Winwinit accompagna le Aziende verso il successo nell’era digitale
             </h2>

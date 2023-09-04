@@ -18,9 +18,10 @@ function Home() {
       <main className="site-content" role="main">
         <Header />
         <Hero />
+        <ClientHome />
         <Services />
         <HowWeWork />
-        <ClientHome />
+
         <ContactUs />
         <Reviews />
         <Footer />

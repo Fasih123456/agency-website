@@ -1,9 +1,8 @@
 function ClientHome() {
   return (
     <>
-      <section className="partners" style={{ backgroundColor: "#F5F7F7" }}>
+      <section className="partners" style={{ backgroundColor: "rgb(1,3,2)" }}>
         <div className="inner-frame">
-          <h4 className="title--h4 aos-init ">I nostri Partners:</h4>
           <div className="partners__wrap">
             <a
               href="https://www.fabrick.com/it/"
