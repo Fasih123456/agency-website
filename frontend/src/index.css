@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
 a {
   font-weight: 500;
   color: #646cff;
@@ -122,6 +123,8 @@ p {
 }
 
 .contact-us-div {
+  max-height: 420px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,4 +149,115 @@ p {
 
 .text-cta__cta {
   padding-bottom: 20px;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.hero__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+path {
+  transform-origin: 50% 0%;
+}
+.background--custom {
+  background-color: #ffffff;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+@keyframes path0 {
+  0% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes path1 {
+  0% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(-50deg);
+  }
+}
+@keyframes path2 {
+  0% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+.client-reviews__text {
+  font-family: dm sans;
+  color: white !important;
+  line-height: 1.7;
+  font-size: 1rem;
+  height: 300px;
+  padding-left: 10px;
+  margin-right: 20px;
+}
+
+.client-reviews__author {
+  color: white !important;
+  font-style: italic;
+  padding-left: 10px;
+}
+
+.client-reviews {
+  background-color: black;
+}
+
+.client-reviews__item {
+  border-right: 2px solid white;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 350px;
+}
+
+.last-item {
+  border-right: none;
+}
+
+.client-reviews {
+  height: 700px;
+}
+.client-review-row {
+  height: 400px;
+}
+
+.review-col {
+  height: 400px;
+}
+
+.client-reviews__title {
+  color: white !important;
+  margin-left: 10px;
+  margin-top: 75px;
+}
+
+.client-reviews__button {
+  background-color: black !important;
 }

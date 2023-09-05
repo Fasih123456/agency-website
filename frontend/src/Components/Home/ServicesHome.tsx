@@ -6,34 +6,38 @@ function ServicesHome() {
   const services = [
     {
       imageSrc: "https://example.com/image1.jpg",
-      title: "Service 1",
-      description: "Description for service 1",
+      title: "API Development",
+      description:
+        "We design versatile APIs that allow your systems to share data and functionality securely with employees, partners and developers. Our APIs accelerate your digital transformation through modular services that simplify complex system integration.",
     },
     {
       imageSrc: "https://example.com/image2.jpg",
-      title: "Service 2",
-      description: "Description for service 2",
+      title: "Generative AI",
+      description:
+        "Our generative AI solutions drive efficiencies by automating repetitive tasks through cutting-edge models like GPT-4. We identify use cases tailored to your needs, integrating seamless AI to augment your workforce.",
     },
     {
       imageSrc: "https://example.com/image3.jpg",
-      title: "Service 3",
-      description: "Description for service 3",
+      title: "Custom SAAS",
+      description:
+        "We build secure, scalable custom SaaS applications aligned to your unique workflows and business requirements. Our SaaS solutions centralize your critical systems and data into an intuitive platform accessible anywhere.",
     },
     {
       imageSrc: "https://example.com/image4.jpg",
-      title: "Service 4",
-      description: "Description for service 4",
+      title: "Cloud SAAS",
+      description:
+        "We migrate your systems to optimized, auto-scaling cloud SaaS architecture for increased performance, resilience and cost savings. Our Cloud SaaS solutions keep you agile and flexible for the future",
     },
   ];
 
   return (
     <>
-      <section className="accordion net-bg" id="service-home">
+      <section className="accordion net-bg" id="service-home" style={{ zIndex: "2" }}>
         <div className="inner-frame ">
           <h2 className="title--h2">
-            <p>Una panoramica sulle nostre</p>
+            <p>The Best Customer Service and</p>
             <p>
-              <strong>Soluzioni</strong>
+              <strong>Solutions</strong>
             </p>
           </h2>
         </div>
@@ -57,7 +61,7 @@ function ServicesHome() {
                       data-ll-status="loaded"
                       src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-5.svg"
                     />
-                    <div className="text--md">MarTech &amp; HrTech </div>
+                    <div className="text--md">API Development </div>
                   </a>
                 </li>
                 <li role="presentation" className="tabs-list__item">
@@ -77,7 +81,7 @@ function ServicesHome() {
                       data-ll-status="loaded"
                       src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-1.svg"
                     />
-                    <div className="text--md">Internet of Things </div>
+                    <div className="text--md">Generative AI </div>
                   </a>
                 </li>
                 <li role="presentation" className="tabs-list__item">
@@ -97,7 +101,7 @@ function ServicesHome() {
                       data-ll-status="loaded"
                       src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-23.png"
                     />
-                    <div className="text--md">RetailTech </div>
+                    <div className="text--md">Custom SAAS </div>
                   </a>
                 </li>
                 <li role="presentation" className="tabs-list__item">
@@ -117,7 +121,7 @@ function ServicesHome() {
                       data-ll-status="loaded"
                       src="https://www.winwinit.eu/wp-content/uploads/2021/04/icon-6.svg"
                     />
-                    <div className="text--md">FinTech &amp; LegalTech </div>
+                    <div className="text--md">Cloud SAAS </div>
                   </a>
                 </li>
               </ul>

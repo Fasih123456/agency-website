@@ -1,212 +1,123 @@
+import React, { useState } from "react";
+import { Container, Row, Col, Button, Carousel } from "react-bootstrap";
+
 function Reviews() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex: number, event: any) => {
+    setIndex(selectedIndex);
+  };
+
   return (
-    <>
-      <section className="testimonials">
-        <div className="testimonials__image">
-          <picture>
-            <source
-              media="(min-width: 1025px)"
-              type="image/webp"
-              srcSet={
-                "https://www.winwinit.eu/wp-content/uploads/2021/05/ezgif-2-b4028f3ba6d0.webp"
-              }
-            />
-            <source
-              media="(max-width: 1025px)"
-              type="image/webp"
-              srcSet="
-                  https://www.winwinit.eu/wp-content/uploads/2021/04/transformation-experts-mob.webp
-                "
-            />
-            <source
-              media="(max-width: 1025px)"
-              type="image/jpg"
-              srcSet="
-                  https://www.winwinit.eu/wp-content/uploads/2021/04/transformation-experts-mob.jpg
-                "
-            />
-            <img
-              className="lazy loaded"
-              alt="La soddisfazione dei Clienti è il </br> nostro miglior biglietto da visita"
-              data-ll-status="loaded"
-              src="https://www.winwinit.eu/wp-content/uploads/2021/05/testimonials.jpg"
-            />
-          </picture>
-        </div>
-        <div className="inner-frame">
-          <div className="testimonials__text">
-            <h2 className="title--h2">
-              La soddisfazione dei Clienti è il <br />
-              nostro miglior biglietto da visita
-            </h2>
-          </div>
-        </div>
-
-        <div className="testimonials__wrap swiper-container js-ts-carousel swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
-          <div
-            className="swiper-wrapper"
-            id="swiper-wrapper-bebd3d18d74aff53"
-            aria-live="polite"
-            style={{ transitionDuration: "0ms", transform: "translate3d(-1316px, 0px, 0px)" }}
-          >
-            <div
-              className="testimonials__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-              style={{ width: "648px", marginRight: "10px" }}
-              role="group"
-              aria-label="6 / 9"
-              data-swiper-slide-index="2"
+    <div className="client-reviews">
+      <Container style={{ marginLeft: "35px" }}>
+        <Row className="justify-content-center client-review-row" style={{ height: "175px" }}>
+          <Col md={11} className="text-left">
+            <h2 className="client-reviews__title">Client Reviews</h2>
+          </Col>
+        </Row>
+        <Row className="justify-content-center client-review-row">
+          <Col md={11}>
+            <Carousel
+              activeIndex={index}
+              onSelect={handleSelect}
+              interval={null}
+              slide={true}
+              indicators={false}
+              style={{ height: "400px" }}
+              controls={false}
             >
-              <div className="-wrap">
-                <p className="-quote text--md">Un Partner ideale</p>
-                <p className="-quote-em text--sm">
-                  Lavorare con WinWinit ed il suo Team è sempre fonte di grande soddisfazione.
-                  Affidabilità e competenza li rendono un punto di riferimento.
-                </p>
-
-                <div className="-cite">
-                  <div className="-cite__text">
-                    <p className="-author">Marco</p>
-                    <p className="-position text--xs">Welfare Solutions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="testimonials__item swiper-slide swiper-slide-prev"
-              style={{ width: "648px", marginRight: "10px" }}
-              role="group"
-              aria-label="4 / 9"
-              data-swiper-slide-index="0"
+              <Carousel.Item>
+                <Row>
+                  <Col md={4} className="review-col">
+                    <div className="client-reviews__item">
+                      <p className="client-reviews__text">
+                        I love it when a seller or developer is so naturally talented and skilled
+                        that you always admire their work. It's like a much needed breath of fresh
+                        air, far exceeding my expectations. Don't hesitate to hire him. I highly
+                        recommend fasih to whoever wants amazing results!
+                      </p>
+                      <p className="client-reviews__author">- brandiepatrick</p>
+                    </div>
+                  </Col>
+                  <Col md={4}>
+                    <div className="client-reviews__item">
+                      <p className="client-reviews__text">
+                        Fashi was great to work with, very responsive and did great work.
+                      </p>
+                      <p className="client-reviews__author">- davis36</p>
+                    </div>
+                  </Col>
+                  <Col md={4}>
+                    <div className="client-reviews__item last-item" style={{ borderRight: "none" }}>
+                      <p className="client-reviews__text">
+                        Great work with quick delivery. He worked on updating and modernizing my
+                        e-commerce website.
+                      </p>
+                      <p className="client-reviews__author">- sabihul</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Row>
+                  <Col md={4}>
+                    <div className="client-reviews__item">
+                      <p className="client-reviews__text">
+                        I asked him to copy a website and he did exactly that. The website looked
+                        exactly like the original and when I asked to modify some components of the
+                        website, he did it right away without any complaints. He always communicated
+                        with me and whenever I had a question about his code, he answered it clearly
+                        and descriptively. He is very friendly, hard-working, dedicated, and easy to
+                        work. I would definitely work with him again. Thank you for providing the
+                        best service! See
+                      </p>
+                      <p className="client-reviews__author">- jiermyu</p>
+                    </div>
+                  </Col>
+                  <Col md={4}>
+                    <div className="client-reviews__item">
+                      <p className="client-reviews__text">
+                        Understood my project very easily. Good communication and experience.
+                      </p>
+                      <p className="client-reviews__author">- salmankhan968</p>
+                    </div>
+                  </Col>
+                  <Col md={4}>
+                    <div className="client-reviews__item last-item">
+                      <p className="client-reviews__text">
+                        Very detailed explanation and professional work 👌🏻
+                      </p>
+                      <p className="client-reviews__author">- reemsaleh95</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Carousel.Item>
+            </Carousel>
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col md={4} className="text-center">
+            <Button
+              variant="secondary"
+              className="client-reviews__button"
+              onClick={() => setIndex(index === 0 ? 1 : index - 1)}
             >
-              <div className="-wrap">
-                <p className="-quote text--md">Idee ed innovazione</p>
-                <p className="-quote-em text--sm">
-                  Lavoriamo con Winwinit da anni e condividiamo con loro lo stesso entusiasmo per le
-                  idee non convenzionali nelle soluzioni di people engagement.
-                </p>
-
-                <div className="-cite">
-                  <div className="-cite__text">
-                    <p className="-author">Cecilia</p>
-                    <p className="-position text--xs">Nautes</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="testimonials__item swiper-slide swiper-slide-active"
-              style={{ width: "648px", marginRight: "10px" }}
-              role="group"
-              aria-label="5 / 9"
-              data-swiper-slide-index="1"
+              <i className="fa-solid fa-arrow-left fa-2xl"></i>
+            </Button>
+          </Col>
+          <Col md={4} className="text-center">
+            <Button
+              variant="secondary"
+              className="client-reviews__button"
+              onClick={() => setIndex(index === 1 ? 0 : index + 1)}
             >
-              <div className="-wrap">
-                <p className="-quote text--md">Infinite sinergie</p>
-                <p className="-quote-em text--sm">
-                  È incredibile come aziende operanti in ambiti così diversi riescano a trovare
-                  sempre infinite sinergie.
-                </p>
-
-                <div className="-cite">
-                  <div className="-cite__text">
-                    <p className="-author">Fabio</p>
-                    <p className="-position text--xs">Fabrick</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="testimonials__item swiper-slide swiper-slide-next"
-              style={{ width: "648px", marginRight: "10px" }}
-              role="group"
-              aria-label="6 / 9"
-              data-swiper-slide-index="2"
-            >
-              <div className="-wrap">
-                <p className="-quote text--md">Un Partner ideale</p>
-                <p className="-quote-em text--sm">
-                  Lavorare con WinWinit ed il suo Team è sempre fonte di grande soddisfazione.
-                  Affidabilità e competenza li rendono un punto di riferimento.
-                </p>
-
-                <div className="-cite">
-                  <div className="-cite__text">
-                    <p className="-author">Marco</p>
-                    <p className="-position text--xs">Welfare Solutions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="testimonials__item swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-              style={{ width: "648px", marginRight: "10px" }}
-              role="group"
-              aria-label="4 / 9"
-              data-swiper-slide-index="0"
-            >
-              <div className="-wrap">
-                <p className="-quote text--md">Idee ed innovazione</p>
-                <p className="-quote-em text--sm">
-                  Lavoriamo con Winwinit da anni e condividiamo con loro lo stesso entusiasmo per le
-                  idee non convenzionali nelle soluzioni di people engagement.
-                </p>
-
-                <div className="-cite">
-                  <div className="-cite__text">
-                    <p className="-author">Cecilia</p>
-                    <p className="-position text--xs">Nautes</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="testimonials__next swiper-button-next"
-            tabIndex={0}
-            role="button"
-            aria-label="Next slide"
-            aria-controls="swiper-wrapper-bebd3d18d74aff53"
-          ></div>
-          <div
-            className="testimonials__prev swiper-button-prev"
-            tabIndex={0}
-            role="button"
-            aria-label="Previous slide"
-            aria-controls="swiper-wrapper-bebd3d18d74aff53"
-          ></div>
-          <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
-            <span
-              className="swiper-pagination-bullet"
-              tabIndex={0}
-              role="button"
-              aria-label="Go to slide 1"
-            ></span>
-            <span
-              className="swiper-pagination-bullet swiper-pagination-bullet-active"
-              tabIndex={0}
-              role="button"
-              aria-label="Go to slide 2"
-            ></span>
-            <span
-              className="swiper-pagination-bullet"
-              tabIndex={0}
-              role="button"
-              aria-label="Go to slide 3"
-            ></span>
-          </div>
-          <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-        </div>
-
-        <div className="inner-frame">
-          <div className="testimonials__cta">
-            <p className="text--md">Vuoi lavorare con noi?</p>
-            <a href="/contact/" className="btn-primary">
-              Richiedi una consulenza gratuita{" "}
-            </a>
-          </div>
-        </div>
-      </section>
-    </>
+              <i className="fa-solid fa-arrow-right fa-2xl"></i>
+            </Button>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

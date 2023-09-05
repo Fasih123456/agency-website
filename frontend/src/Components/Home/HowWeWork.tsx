@@ -11,8 +11,9 @@ function HowWeWork() {
           <header>
             <h2 className="title--h2">
               <p>
-                Consulenza architetturale e<br />
-                <strong>Progetti Custom</strong>
+                We Offer all our clients
+                <br />
+                <strong>Custom Solutions</strong>
               </p>
             </h2>
 
