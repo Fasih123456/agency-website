@@ -1,7 +1,6 @@
 import Header from "../Header";
 
-import CanvasOne from "../CanvasBackground/AmbientCanvasBackgrounds/CanvasOne";
-import CanvasFive from "../CanvasBackground/AmbientCanvasBackgrounds/CanvasFive";
+import CanvasFive from "../CanvasBackground/CanvasFive";
 
 function Hero() {
   return (
