@@ -261,3 +261,12 @@ path {
 .client-reviews__button {
   background-color: black !important;
 }
+
+.nav-drop-down {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header-logo {
+  max-width: 100px !important;
+}
